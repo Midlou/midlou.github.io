@@ -5,6 +5,10 @@ $(window).on('load', function() {
     $(".se-pre-con").fadeOut("slow");  
 });
 
+$(".theme-link").click(function() {
+    $('.se-pre-con').show().delay(100).fadeOut( "slow" );
+});
+
 /*========== Theme components ==========*/
 
 var themes = {
