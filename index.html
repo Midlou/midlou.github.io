@@ -3,14 +3,14 @@
     <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166798367-2"></script>
+<!--         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166798367-2"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'UA-166798367-2');
-        </script>
+        </script> -->
 
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -52,96 +52,90 @@
 		</nav>
         <hr>
         <div class="container">
-            <div class="border border-secondary mb-3 pb-2 pt-2 pl-3 pr-3">
-                <h4 class="text-info"><strong>Disclaimer</strong></h4>
-                <h5 class="text-justify text-muted">First of all, I am not narcissistic enough to make an entire website about myself. The whole point of this is because a very close friend was annoying me about how I have 'secret' projects hidden around the internet. He was right, I think. I made this site very quickly, here you will find all the projects I have worked on PLUS all my profiles.</h5>
+            <br>
+            <h4 class="text-info"><strong>Level Design</strong></h4>
+            <div class="row p-1 border border-secondary">
+                <div class="col-sm-12 col-md-6 col-lg-3 p-1" ng-repeat="data in levelDesignList">
+                    <div class="pb-3 pt-2 pr-3 pl-3 h-100 border border-secondary">
+                        <div class="row text-muted small">
+                            <div class="col-6">
+                                {{ data.game }}
+                            </div>
+                            <div class="col-6 text-right">
+                                {{ data.release }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <strong>{{ data.type }}</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                <i>{{ data.name }}</i>
+                            </div>
+                        </div>
+                        <a ng-href="{{ link.link }}" target="_blank" ng-repeat="link in data.links">
+                            <strong>{{ link.name }}</strong>
+                            <br>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <h4 class="text-info"><strong>Level Design</strong></h4>
-                    <table class="table table-hover border border-secondary">
-                        <tr ng-repeat="data in levelDesignList">
-                            <td class="p-3">
-                                <small class="text-muted"> {{ data.game }}</small>
-                                <p class="my-0 font-lg"><strong>{{ data.type }}</strong></p>
-                                <p class="my-0">{{ data.name }}</p>
-                                <a ng-if="data.steam" target="_blank" ng-href="{{ data.steam }}">
-                                    <strong>
-                                        Steam
-                                    </strong>
-                                </a>
-                                <br>
-                                <a ng-if="data.tf2maps" target="_blank" ng-href="{{ data.tf2maps }}">
-                                    <strong>
-                                        TF2maps
-                                    </strong>
-                                </a>
-                            
-                            </td>
-                            <td class="p-3">
-                                <br>
-                                <h5 class="my-0"><strong>{{ data.alternative.alternative }}</strong></h5>
-                                <p class="my-0">{{ data.alternative.name}}</p>
-                                <a ng-if="data.alternative.link" target="_blank" ng-href="{{ data.alternative.link }}">
-                                    <strong>
-                                        Link
-                                    </strong>
-                                </a>
-                                <a ng-if="data.alternative.steam" target="_blank" ng-href="{{ data.alternative.steam }}">
-                                    <strong>
-                                        Steam
-                                    </strong>
-                                </a>
-                                <br>
-                                <a ng-if="data.alternative.tf2maps" target="_blank" ng-href="{{ data.alternative.tf2maps }}">
-                                    <strong>
-                                        TF2maps
-                                    </strong>
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
 
-                <div class="col-lg-4">
-                    <h4 class="text-info"><strong>Misc</strong></h4>
-                    <table class="table table-hover border border-secondary">
-                        <tr ng-repeat="data in miscList">
-                            <td class="p-3">
-                                <small class="text-muted"> {{ data.topic }}</small>
-                                <p class="my-0 font-lg"><strong>{{ data.type }}</strong></p>
-                                <p class="my-0">{{ data.name }}</p>
-                                <p class="my-0"> {{ data.info }}</p>
-                                <a ng-if="data.link" target="_blank" ng-href="{{ data.link }}">
-                                    <strong>
-                                        Link
-                                    </strong>
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
+            <br>
+            <h4 class="text-info"><strong>Misc</strong></h4>
+            <div class="row p-1 border border-secondary">
+                <div class="col-sm-12 col-md-6 col-lg-3 p-1" ng-repeat="data in miscList">
+                    <div class="pb-3 pt-2 pr-3 pl-3 h-100 border border-secondary">
+                        <div class="row text-muted small">
+                            <div class="col-6">
+                                {{ data.topic }}
+                            </div>
+                            <div class="col-6 text-right">
+                                {{ data.release }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <strong>
+                                    {{ data.type }}
+                                </strong>
+                            </div>
+                        </div>
+                        <a ng-href="{{ link.link }}" target="_blank" ng-repeat="link in data.links">
+                            <strong>{{ data.name }}</strong>
+                            <br>
+                        </a>
+                        <div class="row">
+                            <div class="col-12 small">
+                                {{ data.info }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="col-lg-4">
-                    <h4 class="text-info"><strong>Profiles</strong></h4>
-                    <table class="table table-hover border border-secondary">
-                        <tr ng-repeat="data in profilesList">
-                            <td class="p-3">
-                                <p class="my-0">{{ data.profile }}</p>
-                                <a target="_blank" ng-href="{{ data.link }}">
-                                    <strong>
-                                        {{ data.name }}
-                                    </strong>
-                                </a>
-                            </td>
-                            <td class="p-3 text-right">
+            <br>
+            <h4 class="text-info"><strong>Profiles</strong></h4>
+            <div class="row p-1 border border-secondary">
+                <div class="col-sm-12 col-md-6 col-lg-3 p-1" ng-repeat="data in profilesList">
+                    <div class="pb-3 pt-2 pr-3 pl-3 h-100 border border-secondary">
+                        <div class="row">
+                            <div class="col-6">
+                                <strong>
+                                    {{ data.profile }}
+                                </strong>
+                            </div>
+                            <div class="col-6 text-right">
                                 <span ng-if="data.active" class="text-info">Active</span>
                                 <span ng-if="!data.active" class="text-muted">Not active</span>
-                            </td>
-                        </tr>
-                    </table>
+                            </div>
+                        </div>
+                        <a ng-href="{{ link.link }}" target="_blank" ng-repeat="link in data.links">
+                            <strong>{{ data.name }}</strong>
+                            <br>
+                        </a>
+                    </div>
                 </div>
-
             </div>
         </div>
 
