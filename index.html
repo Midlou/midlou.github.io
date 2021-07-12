@@ -1,167 +1,156 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" ng-controller="myCtrl">
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166798367-2"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<html lang="en" ng-app="twwipls" ng-controller="twwipls">
 
-            gtag('config', 'UA-166798367-2');
-        </script>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166798367-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/custom.css">
+        gtag('config', 'UA-166798367-2');
+    </script>
 
-        <!-- Bootstrap CSS Darkly Theme-->
-        <link rel="stylesheet" href="css/bootstrap/darkly/bootstrap.min.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Project Centralize</title>
-    </head>
-    <body>
-        <div class="se-pre-con">
-            <div class="justify-content-center vertical-center">
-                <div class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Bootstrap CSS Darkly Theme-->
+    <link rel="stylesheet" ng-href="css/bootstrap/vapor/bootstrap.min.css">
+
+    <title>{{ title.abbre }}</title>
+</head>
+
+<body>
+    <div class="se-pre-con">
+        <div class="justify-content-center vertical-center">
+            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
             </div>
         </div>
+    </div>
 
-       <nav class="navbar navbar-default" role="navigation">
-    	    <div class="container">
-                <div class="h4">Midlou</div>
-                <div class="btn-group" role="group">
-                    <div class="btn-group" role="group">
-                        <button id="btnGroupThemes" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="theme-name">Themes</span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupThemes">
-                            <a href="#" data-theme="Default" class="theme-link dropdown-item">Light / Default</a>
-                            <a href="#" data-theme="Cyborg" class="theme-link dropdown-item">Dark / Cyborg</a>
-                            <a href="#" data-theme="Darkly" class="theme-link dropdown-item">Dark / Darkly</a>
-                        </div>
-                    </div>
-                </div>
-		    </div>
-		</nav>
-        <hr>
-        <div class="container">
-            <br>
-            <h4 class="text-info"><strong>Level Design</strong></h4>
-            <div class="row p-1 border border-secondary">
-                <div class="col-sm-12 col-md-6 col-lg-3 p-1" ng-repeat="data in levelDesignList">
-                    <div class="pb-3 pt-2 pr-3 pl-3 h-100 border border-secondary">
-                        <div class="row text-muted small">
-                            <div class="col-6">
-                                {{ data.game }}
-                            </div>
-                            <div class="col-6 text-right">
-                                {{ data.release }}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <strong>{{ data.type }}</strong>
-                            </div>
-                            <div class="col-6 text-right">
-                                <i>{{ data.name }}</i>
-                            </div>
-                        </div>
-                        <a ng-href="{{ link.link }}" target="_blank" ng-repeat="link in data.links">
-                            <strong>{{ link.name }}</strong>
-                            <br>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <nav class="navbar navbar-dark bg-dark p-4">
+        <div class="container-lg">
+            <h3>{{ title.abbre }}</h3>
+            <span>{{ title.name }}</span>
+            <small class="text-muted">{{ title.description }}</small>
+        </div>
+    </nav>
 
-            <br>
-            <h4 class="text-info"><strong>Misc</strong></h4>
-            <div class="row p-1 border border-secondary">
-                <div class="col-sm-12 col-md-6 col-lg-3 p-1" ng-repeat="data in miscList">
-                    <div class="pb-3 pt-2 pr-3 pl-3 h-100 border border-secondary">
-                        <div class="row text-muted small">
-                            <div class="col-6">
-                                {{ data.topic }}
+    <hr>
+
+    <div class="container-lg">
+
+        <div class="row">
+
+            <div class="col-lg-9">
+                <div class="row" ng-repeat="category in categories">
+                    <!-- Title -->
+                    <h3 class="text-info">
+                        <b>{{ category.title }}</b>
+                    </h3>
+                    <!-- Content -->
+                    <div class="col-md-4 mb-1" ng-repeat="project in category.items">
+                        <div class="border border-2 border-dark p-3 h-100 d-flex flex-column">
+                            <!-- Title -->
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>
+                                    <b>{{ project.topic }}</b>
+                                </span>
+                                <small class="text-muted">{{ project.type }}</small>
                             </div>
-                            <div class="col-6 text-right">
-                                {{ data.release }}
+
+                            <!-- Content -->
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center text-success">
+                                <h5>{{ project.name }}</h5>
+                                <h6>{{ project.release }}</h6>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <strong>
-                                    {{ data.type }}
-                                </strong>
+                            <span>{{ project.description }}</span>
+
+                            <!-- Links -->
+                            <hr>
+                            <div class="mt-auto">
+                                <a ng-repeat="link in project.links" ng-href="{{ link.link }}"
+                                    class="btn btn-sm btn-primary" target="_blank">
+                                    {{ link.name }}
+                                </a>
                             </div>
-                        </div>
-                        <a ng-href="{{ link.link }}" target="_blank" ng-repeat="link in data.links">
-                            <strong>{{ data.name }}</strong>
-                            <br>
-                        </a>
-                        <div class="row">
-                            <div class="col-12 small">
-                                {{ data.info }}
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
-            <br>
-            <h4 class="text-info"><strong>Profiles</strong></h4>
-            <div class="row p-1 border border-secondary">
-                <div class="col-sm-12 col-md-6 col-lg-3 p-1" ng-repeat="data in profilesList">
-                    <div class="pb-3 pt-2 pr-3 pl-3 h-100 border border-secondary">
-                        <div class="row">
-                            <div class="col-6">
-                                <strong>
-                                    {{ data.profile }}
-                                </strong>
-                            </div>
-                            <div class="col-6 text-right">
-                                <span ng-if="data.active" class="text-info">Active</span>
-                                <span ng-if="!data.active" class="text-muted">Not active</span>
-                            </div>
+            <div class="col-lg-3">
+                <!-- Title -->
+                <h3 class="text-info">
+                    <b>{{ profiles.title }}</b>
+                </h3>
+                <!-- Content -->
+                <div class="col-md-12 mb-1" ng-repeat="data in profiles.items">
+                    <div class="border border-2 border-dark p-3">
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>
+                                <b>{{ data.website }}</b>
+                            </span>
+
+                            <i class="{{ data.iconClass }}"></i>
                         </div>
-                        <a ng-href="{{ link.link }}" target="_blank" ng-repeat="link in data.links">
-                            <strong>{{ data.name }}</strong>
-                            <br>
+
+                        <!-- Links -->
+                        <a ng-repeat="profile in data.items" ng-href="{{ profile.link }}" target="_blank"
+                            class="btn btn-sm btn-primary">
+                            <i class="fas fa-star text-warning" ng-if="profile.main"></i>
+                            <span>{{ profile.name }}</span>
+
                         </a>
                     </div>
+
                 </div>
             </div>
+
         </div>
 
-        <!-- Footer -->
-        <footer class="page-footer font-small">
+    </div>
+
+    <!-- Footer -->
+    <div class="row m-5">
+        <div class="col-md-12">
             <div class="text-center py-3">
-                Made with Bootstrap, Bootswatch, jQuery, AngularJS
+                Made with Bootstrap, Bootswatch, jQuery, AngularJS, Font Awesome
             </div>
             <div class="text-center">
-                <a target="_blank" href="https://github.com/Midlou/midlou.github.io"><strong>Github</strong></a>
+                <a class="btn btn-primary" target="_blank"
+                    href="https://github.com/Midlou/midlou.github.io"><strong>Github</strong></a>
             </div>
-        </footer>
+        </div>
+    </div>
 
 
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="js/bootstrap/jquery-3.5.1.min.js"></script>
-        <script src="js/bootstrap/popper.min.js"></script>
-        <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- Font awesome icons -->
+    <script src="https://kit.fontawesome.com/833adfb60e.js" crossorigin="anonymous"></script>
 
-        <!-- AngularJS -->
-        <script src="js/angular.min.js"></script>
-        <script src="js/angular_controllers.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/bootstrap/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
 
-        <!-- Optional JavaScript -->
-        <script src="js/main.js"></script>
+    <!-- AngularJS -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/init.js"></script>
+
+    <!-- Optional JavaScript -->
+    <script src="js/main.js"></script>
 
 
-    </body>
+</body>
+
 </html>

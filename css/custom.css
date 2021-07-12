@@ -1,6 +1,16 @@
 /*========== Loading screen ==========*/
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+
+.no-js #loader {
+	display: none;
+}
+
+.js #loader {
+	display: block;
+	position: absolute;
+	left: 100px;
+	top: 0;
+}
+
 .se-pre-con {
 	position: fixed;
 	left: 0px;
@@ -12,15 +22,16 @@
 }
 
 /*========== Center loading spinner ==========*/
+
 .vertical-center {
-    min-height: 100%;  
-    min-height: 100vh; 
-  
-    display: flex;
-    align-items: center;
+	min-height: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
 }
 
 /*========== Custom CSS ==========*/
+
 .font-lg {
 	font-size: 16px;
 }
