@@ -1,0 +1,26 @@
+[
+	{
+		"name": "miceblocks",
+		"label": "Miceblocks Resource Pack",
+		"description": "Miceblocks is a resource pack I worked on during 2020. This project literally changed my life!",
+		"config": {
+			"pageLink": "/miceblocks",
+			"releaseDate": "21/05/2020"
+		},
+		"textContent": [
+			{
+				"order": 1,
+				"title": "How it began",
+				"text": "Well, it's hard for me to even get started. Miceblocks changed my life, like... literally. I don't remember exactly what started my desire to make a resource pack for Minecraft, I think I always wanted to work on a project, whatever it was. Of cource, I chose the easiest thing to work with, a simple and not-so-ambitious Minecraft texture pack based on oCd pack. You ask me today, Miceblocks is a very boring texture pack.",
+				"footer": ""
+			}
+		],
+		"imageContent": [
+			{
+				"order": 1,
+				"title": "",
+				"description": ""
+			}
+		]
+	}
+]
