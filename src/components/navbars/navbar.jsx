@@ -61,8 +61,8 @@ export default function NavBar({ title = '', menuItems = [] }) {
 				<Disclosure.Panel className="sm:hidden">
 					<div className="px-2 pt-2 pb-3 space-y-1">
 						{menuItems.map((item) => (
-							<Link to={item.link}>
-								<Disclosure.Button key={item.label}
+							<Link to={item.link} key={item.label}>
+								<Disclosure.Button
 									aria-current={item.label === title ? 'page' : undefined}
 									className={`${item.label === title ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} w-full text-left px-3 py-2 rounded-md text-lg font-medium`}>
 									{item.label}
