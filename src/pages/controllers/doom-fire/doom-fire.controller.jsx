@@ -1,15 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
-import Input from '../inputs/input';
-import Panel from '../panels/panel';
-import Button from '../buttons/button';
-import DividerLabel from '../dividers/divider-label';
+const FIRE_COLORS_PALETTE = ["7, 7, 7", "31, 7, 7", "47, 15, 7", "71, 15, 7", "87, 23, 7", "103, 31, 7", "119, 31, 7", "143, 39, 7", "159, 47, 7", "175, 63, 7", "191, 71, 7", "199, 71, 7", "223, 79, 7", "223, 87, 7", "223, 87, 7", "215, 95, 7", "215, 95, 7", "215, 103, 15", "207, 111, 15", "207, 119, 15", "207, 127, 15", "207, 135, 23", "199, 135, 23", "199, 143, 23", "199, 151, 31", "191, 159, 31", "191, 159, 31", "191, 167, 39", "191, 167, 39", "191, 175, 47", "183, 175, 47", "183, 183, 47", "183, 183, 55", "207, 207, 111", "223, 223, 159", "239, 239, 199", "255, 255, 255"];
 
-import ExternalLinks from "@content/external-links.json"
-
-const fireColorsPalette = ['7, 7, 7', '31, 7, 7', '47, 15, 7', '71, 15, 7', '87, 23, 7', '103, 31, 7', '119, 31, 7', '143, 39, 7', '159, 47, 7', '175, 63, 7', '191, 71, 7', '199, 71, 7', '223, 79, 7', '223, 87, 7', '223, 87, 7', '215, 95, 7', '215, 95, 7', '215, 103, 15', '207, 111, 15', '207, 119, 15', '207, 127, 15', '207, 135, 23', '199, 135, 23', '199, 143, 23', '199, 151, 31', '191, 159, 31', '191, 159, 31', '191, 167, 39', '191, 167, 39', '191, 175, 47', '183, 175, 47', '183, 183, 47', '183, 183, 55', '207, 207, 111', '223, 223, 159', '239, 239, 199', '255, 255, 255'];
-
-const DoomFire = () => {
+function DoomFireController({ ...others }) {
 	// Core states
 	const [fireArray, setFireArray] = useState([]);
 
@@ -133,7 +126,7 @@ const DoomFire = () => {
 
 				let fireIntensity = fireArray[pixelIndex];
 
-				let colorString = fireIntensity ? fireColorsPalette[fireIntensity] : fireColorsPalette[0];
+				let colorString = fireIntensity ? FIRE_COLORS_PALETTE[fireIntensity] : FIRE_COLORS_PALETTE[0];
 
 				ctx.beginPath();
 				ctx.fillStyle = `rgb(${colorString})` || '#000';
@@ -143,125 +136,28 @@ const DoomFire = () => {
 		}
 	}
 
-
-	return <Panel className="bg-gray-800">
-		<div>
-			<DividerLabel label="Options" />
-
-			<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-				<Button
-					label={"Toggle"}
-					onClick={() => toggleInterval()}
-					toggle={updateRate !== 0}
-					className={'w-full'}
-				/>
-				<Button
-					label={"Incandescent air"}
-					onClick={() => setIncandescentAir(!incandescentAir)}
-					toggle={incandescentAir}
-					className={'w-full'}
-				/>
-			</div>
-
-		</div>
-
-		<div>
-			<DividerLabel label="Doom fire" />
-
-			<div className="flex items-center justify-center">
-				<canvas ref={canvasRef} width={fireWidth * scaleMultiplier} height={fireHeight * scaleMultiplier} className="canvas-crisp-pixels w-full" />
-			</div>
-		</div>
-
-		<div>
-
-			<div className="col-span-1">
-				<DividerLabel label="Parameters" />
-			</div>
-
-			<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-				<div>
-					<Input
-						setState={setSelectedFireSourceIntensity}
-						value={selectedFireSourceIntensity}
-						type='range'
-						placeholder='Fire source intensity'
-						label={'Fire source intensity: ' + selectedFireSourceIntensity}
-						min={0}
-						max={fireColorsPalette.length - 1}
-					/>
-				</div>
-				<div>
-					<Input
-						setState={setScaleMultiplier}
-						value={scaleMultiplier}
-						type='number'
-						placeholder='Scale Multiplier'
-						label='Scale Multiplier'
-					/>
-				</div>
-				<div>
-					<Input
-						setState={setFireWidth}
-						value={fireWidth}
-						type='number'
-						placeholder='Width'
-						label='Width'
-					/>
-				</div>
-				<div>
-					<Input
-						setState={setFireHeight}
-						value={fireHeight}
-						type='number'
-						placeholder='Height'
-						label='Height'
-					/>
-				</div>
-				<div>
-					<Input
-						setState={setSelectedUpdateRate}
-						value={selectedUpdateRate}
-						type='number'
-						placeholder='Update rate'
-						label='Update rate'
-					/>
-				</div>
-				<div>
-					<Input
-						setState={setDecayRandomness}
-						value={decayRandomness}
-						type='number'
-						placeholder='Decay'
-						label='Decay'
-					/>
-				</div>
-				<div>
-					<Input
-						setState={setWindRandomness}
-						value={windRandomness}
-						type='number'
-						placeholder='Wind randomness'
-						label='Wind randomness'
-					/>
-				</div>
-			</div>
-
-		</div>
-
-		<div>
-			<DividerLabel label="Info" />
-			<b>Inspired by:</b>
-			{
-				ExternalLinks.doomInspirations.map((value, key) => {
-					return <div key={key}>
-						<a className="stylized-link" href={value.link} rel="noreferrer" target="_blank">{value.label}</a>
-					</div>
-				})
-			}
-		</div>
-
-	</Panel>
+	return {
+		canvasRef,
+		updateRate,
+		fireWidth,
+		fireHeight,
+		windRandomness,
+		decayRandomness,
+		scaleMultiplier,
+		incandescentAir,
+		selectedUpdateRate,
+		FIRE_COLORS_PALETTE,
+		selectedFireSourceIntensity,
+		setFireWidth,
+		setFireHeight,
+		toggleInterval,
+		setWindRandomness,
+		setScaleMultiplier,
+		setDecayRandomness,
+		setIncandescentAir,
+		setSelectedUpdateRate,
+		setSelectedFireSourceIntensity,
+	};
 }
 
-export default DoomFire;
+export default DoomFireController;
