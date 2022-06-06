@@ -46,11 +46,17 @@ module.exports = {
 		`gatsby-background-image`,
 		{
 			resolve: `gatsby-source-filesystem`,
-			options: { name: `images`, path: path.join(__dirname, `src`, `images`) },
+			options: { 
+				name: `images`, 
+				path: path.join(__dirname, `src`, `images`) 
+			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
-			options: { name: `miceblocksImages`, path: `${__dirname}/src/pages/projects/miceblocks/images` },
+			options: { 
+				name: `miceblocksImages`, 
+				path: `${__dirname}/src/pages/projects/miceblocks/images` 
+			},
 		}
 	],
 

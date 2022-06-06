@@ -12,7 +12,7 @@ const MainLayout = ({ title, Component }) => {
 		<ToastContainer position='bottom-left' autoClose={5000} theme="dark" />
 
 		<Helmet>
-			<title>{title}</title>
+			<title>{title + " - Midlou"}</title>
 			<link rel="icon" href={favicon} />
 			{/* <meta name="description" content="Helmet application" /> */}
 		</Helmet>

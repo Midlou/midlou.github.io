@@ -18,6 +18,7 @@
 		"imageContent": [
 			{
 				"order": 1, // Remove if you want random selection. If match any "imageText" order, the text will be placed next to the image 
+				"fileName": "",
 				"title": "",
 				"description": ""
 			}

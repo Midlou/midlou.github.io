@@ -1,12 +1,11 @@
 [
 	{
+		"pagePath": "miceblocks/about",
 		"name": "miceblocks",
 		"label": "Miceblocks Resource Pack",
-		"description": "Miceblocks is a resource pack I worked on during 2020. This project literally changed my life!",
-		"config": {
-			"pageLink": "/miceblocks",
-			"releaseDate": "21/05/2020"
-		},
+		"description": "Miceblocks is a resource pack that I worked on across Q3~Q4 of 2020. This project literally changed my life!",
+		"pageLink": "/projects/miceblocks",
+		"releaseDate": "21/05/2020",
 		"textContent": [
 			{
 				"order": 1,
@@ -18,7 +17,13 @@
 		"imageContent": [
 			{
 				"order": 1,
-				"title": "",
+				"fileName": "cleverson-a1",
+				"title": "Cleverson's first appearance",
+				"description": "Cleverson is a bowless skeleton that we found on a survival server"
+			},
+			{
+				"fileName": "cleverson-a2",
+				"title": "Me and the boys at Cleverson's new home",
 				"description": ""
 			}
 		]
