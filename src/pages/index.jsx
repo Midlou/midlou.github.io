@@ -1,5 +1,5 @@
 import { StaticImage } from "gatsby-plugin-image";
-import * as React from "react"
+import * as React from "react";
 
 import MainLayout from '@components/layouts/main';
 import ResponsiveText from "@components/text/responsive-text";
