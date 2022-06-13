@@ -4,6 +4,7 @@ import _ from "lodash";
 import ContainerGrid from "@components/containers/container-grid";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import If from "@components/conditionals/if";
+import TextImageRow from "@components/page-rows/text-image-row";
 
 const rowElementsQty = 2;
 var imageData = [];
@@ -68,6 +69,16 @@ function prepareRowContent(rowItems, preparedRows = []) {
 	return preparedRows;
 }
 
+function getRowElement(rowText, rowImage) {
+	rowImage.image = rowImage
+		? getImageFromQueryData(rowImage)
+		: null;
+
+	return <TextImageRow key={rowText.order || rowImage.order}
+		imageContent={rowImage} textContent={rowText} />
+}
+
+
 function getImageFromQueryData(rowImage) {
 	let imageNode = _.find(imageData, {
 		node: {
@@ -78,26 +89,6 @@ function getImageFromQueryData(rowImage) {
 	});
 
 	return imageNode?.node.childImageSharp.gatsbyImageData;
-}
-
-function getRowElement(rowText, rowImage) {
-	let gatsbyImage = rowImage
-		? getImageFromQueryData(rowImage)
-		: null;
-
-	return <ContainerGrid key={rowText.order || rowImage.order} className={"grid-cols-3 gap-4 py-3 px-6"}>
-		<If render={gatsbyImage} body={() => {
-			return <div className="col-span-1">
-				<GatsbyImage image={gatsbyImage} alt={rowImage.description} />
-				<span>{rowImage.description}</span>
-			</div>
-		}} />
-		<div className="col-span-2">
-			{
-				rowText.text
-			}
-		</div>
-	</ContainerGrid>
 }
 
 export default GenericProjectPage;

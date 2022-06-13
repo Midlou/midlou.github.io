@@ -20,7 +20,7 @@ function getColumn(label, direction, type) {
 	</td>
 }
 
-export default function DividerLabel({ label, direction = "center" }) {
+export default function DividerLabel({ label = "", direction = "center" }) {
 	return (
 		<table className="w-full">
 			<tbody>

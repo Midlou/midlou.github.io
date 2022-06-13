@@ -10,31 +10,26 @@ import ContainerGrid from "@components/containers/container-grid.jsx";
 import GenericProjectPage from "./controllers/generic-project-page.controller.jsx";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql } from 'gatsby'
+import DividerLabel from "@components/dividers/divider-label.jsx";
 
 const PageContent = ({ data, pageContext }) => {
 	const { rowsContent } = GenericProjectPage({ data, pageContext });
 
 	return <ContainerFlex>
-		<Panel className="bg-gray-800 w-full">
-			<div className="block rounded-lg shadow-lg bg-gray-700 text-white">
-				<div className="flex flex-wrap justify-between items-center py-3 px-6 border-b border-gray-800">
-					<h1 className="font-bold text-2xl">
-						{pageContext.label}
-						{/* <If render={pageContext.pageLink} body={() => <Link
-						to={pageContext.pageLink} className="stylized-link">Site
-					</Link>
-					} /> */}
-					</h1>
-					<span className="text-base">
-						{pageContext.description}
-					</span>
-
-				</div>
-				{
-					rowsContent
-				}
+		{/* <div className="lg:w-3/4 divide-y divide-double divide-slate-700"> */}
+		<div className="lg:w-3/4">
+			<div className="md:w-full my-6">
+				<h1 className="font-bold text-4xl text-center my-4">
+					{pageContext.label}
+				</h1>
+				<p className="text-lg text-justify">
+					{pageContext.description}
+				</p>
 			</div>
-		</Panel>
+			{
+				rowsContent
+			}
+		</div>
 	</ContainerFlex>;
 }
 
