@@ -1,9 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { extend, Canvas, useFrame, useThree } from '@react-three/fiber';
-import { PerspectiveCamera } from "three";
-import { OrbitControls, TransformControls } from 'three-stdlib';
+import { OrbitControls,  } from 'three-stdlib';
 import MainLayout from "@components/layouts/main";
-import CameraControls from "./components/camera-controls";
+
+extend({ OrbitControls });
+
+const CameraControls = () => {
+	const {
+		camera,
+		gl: { domElement },
+	} = useThree();
+	const controls = useRef();
+
+	let configs = {
+		ref: controls,
+		enableDamping: true,
+		dampingFactor: 0.05,
+		rotateSpeed: 0.25,
+		minZoom: 0.5,
+		maxZoom: 1,
+	}
+
+	useFrame((state) => controls.current.update());
+	return <orbitControls {...configs} args={[camera, domElement]} />;
+};
 
 const Box = (props) => {
 	// This reference will give us direct access to the mesh so we can animate it
