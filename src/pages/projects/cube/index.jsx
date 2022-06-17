@@ -3,46 +3,7 @@ import { extend, Canvas, useFrame, useThree } from '@react-three/fiber';
 import { PerspectiveCamera } from "three";
 import { OrbitControls, TransformControls } from 'three-stdlib';
 import MainLayout from "@components/layouts/main";
-
-extend({ OrbitControls, TransformControls });
-
-// const CameraController = () => {
-// 	const { camera, gl } = useThree();
-// 	useEffect(
-// 		() => {
-// 			const controls = new OrbitControls(camera, gl.domElement);
-
-// 			controls.enableDamping = true;
-// 			controls.dampingFactor = 0.05;
-// 			controls.update();
-// 			return () => {
-// 				controls.dispose();
-// 			};
-// 		},
-// 		[camera, gl]
-// 	);
-// 	return null;
-// };
-
-const CameraControls = () => {
-	const {
-		camera,
-		gl: { domElement },
-	} = useThree();
-	const controls = useRef();
-
-	let configs = {
-		ref: controls,
-		enableDamping: true,
-		dampingFactor: 0.05,
-		rotateSpeed: 0.25,
-		minZoom: 0.5,
-		maxZoom: 1,
-	}
-
-	useFrame((state) => controls.current.update());
-	return <orbitControls {...configs} args={[camera, domElement]} />;
-};
+import CameraControls from "./components/camera-controls";
 
 const Box = (props) => {
 	// This reference will give us direct access to the mesh so we can animate it
@@ -98,27 +59,6 @@ const Sphere = (props) => {
 	)
 }
 
-// function Controls() {
-// 	const {
-// 		camera,
-// 		gl: { domElement }
-// 	} = useThree();
-
-// 	const controls = <OrbitControls args={[camera, domElement]} />
-
-// 	controls.enableDamping = true; 
-// 	controls.dampingFactor = 0.05;
-
-// 	return controls;
-// }
-
-function CameraHelper() {
-	const camera = new PerspectiveCamera(60, 1, 1, 3);
-	return <group position={[0, 0, 2]}>
-		<cameraHelper args={[camera]} />
-	</group>;
-}
-
 const PageContent = () => {
 	let firstLightPos = [-2, 2, 2];
 	let secondLightPos = [2, -2, 2];
@@ -136,10 +76,7 @@ const PageContent = () => {
 		<Sphere position={firstLightPos} shadow={true} />
 		<Sphere position={secondLightPos} shadow={true} />
 		<Sphere position={thirdLightPos} shadow={true} />
-
-		{/* <CameraHelper /> */}
 	</Canvas>
-
 }
 
 const Layout = () => <MainLayout title={"Home"} Component={<PageContent />} />;
