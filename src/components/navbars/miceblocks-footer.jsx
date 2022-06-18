@@ -50,7 +50,7 @@ const MiceblocksFooter = () => {
 					placeholder="none"
 					alt="Midlou logo"
 					loading="eager"
-					src="../../../../../images/mid-icon-light-64x64-a1.svg"
+					src="../../images/mid-icon-light-64x64-a1.svg"
 				/>
 			</Link>
 		</div>

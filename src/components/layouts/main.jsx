@@ -1,11 +1,11 @@
 import React from "react";
 import NavBar from "../navbars/navbar";
 import { Helmet } from 'react-helmet';
-import Footer from '../navbars/footer'
-import favicon from '../../images/mid-icon-light-64x64-a1.png'
+import Footer from '../navbars/footer';
+import favicon from '../../images/mid-icon-light-64x64-a1.png';
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import InternalPages from "../../content/internal-pages.json"
+import InternalPages from "../../content/internal-pages.json";
 
 const MainLayout = ({ title, Component }) => {
 	return <>

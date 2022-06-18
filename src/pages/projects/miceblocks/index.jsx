@@ -6,8 +6,8 @@ import Modal from "@components/modals/modal";
 import DonateButton from "@components/buttons/donateButton";
 import ContainerGrid from "@components/containers/container-grid";
 
-import MiceblocksLayout from "@miceblocksComponents/layouts/miceblocks-main";
-import MiceblocksDownloadBtn from "@miceblocksComponents/buttons/miceblocks-download-btn";
+import MiceblocksLayout from "@components/layouts/miceblocks-main";
+import MiceblocksDownloadBtn from "@components/buttons/miceblocks-download-btn";
 
 const PageContent = () => {
 	let [isDownloadModalOpen, setDownloadModalOpen] = useState(false);
@@ -50,7 +50,7 @@ const PageContent = () => {
 				placeholder="none"
 				alt="Miceblocks text logo"
 				loading="eager"
-				src="./images/mice-text-1024x256.png"
+				src="../../../images/miceblocks/mice-text-1024x256.png"
 			/>
 		</div>
 

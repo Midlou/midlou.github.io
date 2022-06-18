@@ -3,12 +3,11 @@
 		"baseUrl": "./src",
 		// "jsx": "react",
 		"paths": {
-			"@components/*": ["components/*"],
 			"@images/*": ["images/*"],
 			"@shared/*": ["shared/*"],
 			"@content/*": ["content/*"],
-			"@miceblocksComponents/*": ["pages/projects/miceblocks/components/*"],
-			"@miceblocksImages/*": ["pages/projects/miceblocks/images/*"],
+			"@components/*": ["components/*"],
+			"@controllers/*": ["controllers/*"],
 		}
 	},
 	// "exclude": ["node_modules", "public", ".cache"]

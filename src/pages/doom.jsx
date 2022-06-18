@@ -1,13 +1,13 @@
 import * as React from "react"
 
-import Input from '../components/inputs/input';
-import Panel from '../components/panels/panel';
-import Button from '../components/buttons/button';
-import DividerLabel from '../components/dividers/divider-label';
+import Input from '@components/inputs/input';
+import Panel from '@components/panels/panel';
+import Button from '@components/buttons/button';
+import DividerLabel from '@components/dividers/divider-label';
 
 import MainLayout from '@components/layouts/main';
 import ContainerFlex from "@components/containers/container-flex";
-import DoomFireController from "./controllers/doom-fire/doom-fire.controller";
+import DoomFireController from "@controllers/doom-fire/doom-fire.controller";
 
 import ExternalLinks from "@content/external-links.json";
 

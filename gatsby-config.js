@@ -28,12 +28,11 @@ module.exports = {
 			resolve: `gatsby-plugin-alias-imports`,
 			options: {
 				alias: {
-					"@components": path.resolve(__dirname, 'src/components'),
 					"@images": path.resolve(__dirname, 'src/images'),
 					"@shared": path.resolve(__dirname, 'src/shared'),
 					"@content": path.resolve(__dirname, 'src/content'),
-					"@miceblocksComponents": path.resolve(__dirname, 'src/pages/projects/miceblocks/components'),
-					"@miceblocksImages": path.resolve(__dirname, 'src/pages/projects/miceblocks/images'),
+					"@components": path.resolve(__dirname, 'src/components'),
+					"@controllers": path.resolve(__dirname, 'src/controllers'),
 				},
 				extensions: []
 			}
@@ -49,13 +48,6 @@ module.exports = {
 			options: { 
 				name: `images`, 
 				path: path.join(__dirname, `src`, `images`) 
-			},
-		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: { 
-				name: `miceblocksImages`, 
-				path: `${__dirname}/src/pages/projects/miceblocks/images` 
 			},
 		}
 	],
