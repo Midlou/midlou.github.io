@@ -1,19 +1,41 @@
 import React from "react";
 import _ from "lodash";
 
-import ContainerGrid from "@components/containers/container-grid";
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
-import If from "@components/conditionals/if";
 import TextImageRow from "@components/page-rows/text-image-row";
 
-const rowElementsQty = 2;
 var imageData = [];
+
+function GenericProjectPage({ data, pageContext }) {
+	imageData = data.allFile.edges;
+
+	let rowElements = getRowElements(pageContext);
+	let links = pageContext.links;
+
+	return {
+		links,
+		imageData,
+		rowElements
+	};
+}
+
+function getRowElements(pageContext) {
+	let pageContent = _.concat(pageContext.textContent, pageContext.imageContent);
+
+	let groupedContent = getGroupedContent(pageContent);
+
+	let orderedContent = getOrderedContent(groupedContent.withOrder);
+	let unorderedContent = [];
+
+	return _.concat(orderedContent, unorderedContent);
+}
 
 function getGroupedContent(items) {
 	let withOrder = {};
 	let withoutOrder = [];
 
 	_.each(items, (item) => {
+		if (!item) return;
+
 		if (!item.order) return withoutOrder.push(item);
 
 		if (!withOrder[item.order]) withOrder[item.order] = [];
@@ -23,22 +45,6 @@ function getGroupedContent(items) {
 	return { withOrder, withoutOrder };
 }
 
-function GenericProjectPage({ data, pageContext }) {
-	imageData = data.allFile.edges;
-
-	let pageContent = _.concat(pageContext.textContent, pageContext.imageContent);
-
-	let groupedContent = getGroupedContent(pageContent);
-
-	let orderedContent = getOrderedContent(groupedContent.withOrder);
-	let unorderedContent = [];
-
-	let rowsContent = _.concat(orderedContent, unorderedContent);
-
-	return {
-		rowsContent
-	};
-}
 
 function getOrderedContent(orderedRow) {
 	let preparedRows = [];
@@ -52,13 +58,14 @@ function getOrderedContent(orderedRow) {
 }
 
 function prepareRowContent(rowItems, preparedRows = []) {
-	// let row = _.take(rowItems, rowElementsQty);
 	let row = _.take(rowItems, 2);
 
 	if (!row.length) return preparedRows;
 
 	let rowImage = _.find(row, 'fileName');
 	let rowText = _.find(row, 'text');
+
+	if (!rowText) return preparedRows;
 
 	let preparedRow = getRowElement(rowText, rowImage);
 	preparedRows.push(preparedRow);
@@ -70,9 +77,9 @@ function prepareRowContent(rowItems, preparedRows = []) {
 }
 
 function getRowElement(rowText, rowImage) {
-	rowImage.image = rowImage
-		? getImageFromQueryData(rowImage)
-		: null;
+	if (rowImage) {
+		rowImage.image = getImageFromQueryData(rowImage);
+	}
 
 	return <TextImageRow key={rowText.order || rowImage.order}
 		imageContent={rowImage} textContent={rowText} />

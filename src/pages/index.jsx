@@ -7,7 +7,7 @@ import ContainerFlex from "@components/containers/container-flex";
 
 const PageContent = () => {
 	return <ContainerFlex>
-		<div className="px-5 text-justify">
+		<div className="px-5 text-justify md:max-w-3xl">
 			<div className="flex justify-center container mx-auto py-3">
 				<StaticImage
 					className="block w-1/4"
