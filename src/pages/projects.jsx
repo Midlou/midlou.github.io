@@ -1,12 +1,44 @@
 import * as React from "react"
-import MainLayout from '@components/layouts/main';
-import ContainerFlex from "@components/containers/container-flex";
+
 import Panel from "@components/panels/panel";
+import Button from "@components/buttons/button";
+import MainLayout from '@components/layouts/main';
+import { navigatePageBlank } from '@shared/helpers';
+import ContainerFlex from "@components/containers/container-flex";
 
 const PageContent = () => {
+
+	const data = require('@content/projects-content.json');
+
 	return <ContainerFlex>
-		<Panel className="bg-gray-800 w-full">
-			List of projects go here
+		<Panel className="bg-gray-800 w-full overflow-x-auto">
+			<table className="default-table default-table-hover">
+				<thead>
+					<tr>
+						<th>Project</th>
+						<th>Description</th>
+						<th>Link</th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						data.map(project => {
+							return <tr onClick={(e) => navigatePageBlank(e, project.pageLink)} key={project.name} className="cursor-pointer">
+								<td>{project.label}</td>
+								<td>{project.description}</td>
+								<td>
+									<Button
+										label={"About"}
+										toggle={true}
+										onClick={(e) => navigatePageBlank(e, project.aboutPath)}
+										className={'w-full'}
+									/>
+								</td>
+							</tr>
+						})
+					}
+				</tbody>
+			</table>
 		</Panel>
 	</ContainerFlex>;
 }

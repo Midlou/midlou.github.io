@@ -7,7 +7,7 @@ exports.createPages = ({ actions }) => {
 	const template = path.resolve('./src/components/templates/generic-project-page.jsx');
 
 	data.forEach(project => {
-		let path = `projects/${project.pagePath || project.name}`;
+		let path = `${project.aboutPath || project.name}`;
 
 		createPage({
 			path,

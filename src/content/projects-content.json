@@ -1,10 +1,10 @@
 [
 	{
-		"pagePath": "doom/about",
+		"aboutPath": "/projects/doom/about",
+		"pageLink": "/projects/doom",
 		"name": "doom",
 		"label": "Doom fire",
 		"description": "Doom fire canvas with some basic parameter controls",
-		"pageLink": "/projects/doom",
 		"textContent": [
 			{
 				"order": 1,
@@ -22,11 +22,11 @@
 		]
 	},
 	{
-		"pagePath": "miceblocks/about",
+		"aboutPath": "/projects/miceblocks/about",
+		"pageLink": "/projects/miceblocks",
 		"name": "miceblocks",
 		"label": "Miceblocks Resource Pack",
 		"description": "Miceblocks is a resource pack that I worked on across Q3~Q4 of 2020. This project literally changed my life!",
-		"pageLink": "/projects/miceblocks",
 		"releaseDate": "21/05/2020",
 		"headerFileImage": "mice-text-1024x256",
 		"headerDescriptionImage": "Miceblocks text logo",
