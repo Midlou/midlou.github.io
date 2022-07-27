@@ -19,7 +19,7 @@ const LinksRow = ({ links }) => {
 							</Link>
 
 							: <div key={key}>
-								<a className="stylized-link" href={value.link} rel={"noopener"} target={"_blank"}>{value.label}</a>
+								<a className="stylized-link" href={value.link} rel={"noreferrer"} target={"_blank"}>{value.label}</a>
 							</div>;
 					})
 				}

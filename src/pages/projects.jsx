@@ -11,19 +11,20 @@ const PageContent = () => {
 	const data = require('@content/projects-content.json');
 
 	return <ContainerFlex>
-		<Panel className="bg-gray-800 w-full overflow-x-auto">
-			<table className="default-table default-table-hover">
+		<Panel className="bg-gray-800 lg:w-3/4 md:w-full overflow-x-auto">
+			<table className="default-table">
 				<thead>
 					<tr>
-						<th>Project</th>
-						<th>Description</th>
-						<th>Link</th>
+						<th className="text-left">Project</th>
+						<th className="text-left">Description</th>
+						<th className="text-center">Link</th>
 					</tr>
 				</thead>
 				<tbody>
 					{
 						data.map(project => {
-							return <tr onClick={(e) => navigatePageBlank(e, project.pageLink)} key={project.name} className="cursor-pointer">
+							return <tr onClick={(e) => navigatePageBlank(e, project.pageLink)} key={project.name} 
+								className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600">
 								<td>{project.label}</td>
 								<td>{project.description}</td>
 								<td>
