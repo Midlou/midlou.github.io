@@ -3,7 +3,7 @@ import * as React from "react"
 import Panel from "@components/panels/panel";
 import Button from "@components/buttons/button";
 import MainLayout from '@components/layouts/main';
-import { navigatePageBlank } from '@shared/helpers';
+import { navigatePage } from '@shared/helpers';
 import ContainerFlex from "@components/containers/container-flex";
 
 const PageContent = () => {
@@ -23,7 +23,7 @@ const PageContent = () => {
 				<tbody>
 					{
 						data.map(project => {
-							return <tr onClick={(e) => navigatePageBlank(e, project.pageLink)} key={project.name} 
+							return <tr onClick={(e) => navigatePage(e, project.pageLink)} key={project.name} 
 								className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600">
 								<td>{project.label}</td>
 								<td>{project.description}</td>
@@ -31,7 +31,7 @@ const PageContent = () => {
 									<Button
 										label={"About"}
 										toggle={true}
-										onClick={(e) => navigatePageBlank(e, project.aboutPath)}
+										onClick={(e) => navigatePage(e, project.aboutPath)}
 										className={'w-full'}
 									/>
 								</td>
