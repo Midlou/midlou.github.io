@@ -46,11 +46,18 @@ module.exports = {
 		`gatsby-plugin-sass`,
 		{
 			resolve: `gatsby-source-filesystem`,
-			options: { 
-				name: `images`, 
-				path: path.join(__dirname, `src`, `images`) 
+			options: {
+				name: `images`,
+				path: path.join(__dirname, `src`, `images`)
 			},
-		}
+		},
+		{
+			resolve: `gatsby-plugin-nprogress`,
+			options: {
+				color: `RoyalBlue`,
+				showSpinner: true,
+			},
+		},
 	],
 
 };
