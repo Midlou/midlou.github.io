@@ -6,7 +6,7 @@ import ContainerFlex from "@components/containers/container-flex";
 
 const PageContent = () => {
 	return <ContainerFlex>
-		<div className="py-5 text-justify md:max-w-3xl">
+		<div className="px-5 text-justify md:max-w-3xl">
 			<h1 className="sm:text-xl md:text-2xl leading-10 tracking-tight">
 				<span className="font-bold">Yo! I make stuff! ...</span> <small className="text-base text-gray-300">I can't find a better definition</small>
 			</h1>

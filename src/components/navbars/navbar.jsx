@@ -6,7 +6,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Icon from "@components/icons/icon";
 
 export default function NavBar({ title = '', setDrawerIsOpen = () => { } }) {
-	return <nav className="text-white text-center p-[.66rem] bg-gray-800 drop-shadow-lg">
+	return <nav className="text-white text-center p-3 bg-gray-800 drop-shadow-lg">
 
 		<div className="flex flex-wrap justify-between items-center mx-auto max-w-7xl">
 			<div className="flex justify-between items-center">
