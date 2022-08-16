@@ -6,23 +6,23 @@ import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
 import { faSteam, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 import Icon from '@components/icons/icon';
-import ExternalLinks from "@content/external-links.json";
+import { EXTERNAL_LINKS } from "@constants/external-links";
 
 const MiceblocksFooter = () => {
 	return <div className="text-white text-center p-5 bg-gray-800">
 
 		<div className="mb-5">
-			<a className="mx-3 stylized-link text-7xl" href={ExternalLinks.midlouSteamAccount.link} title={ExternalLinks.midlouSteamAccount.label}
+			<a className="mx-3 stylized-link text-7xl" href={EXTERNAL_LINKS.midlouSteamAccount.link} title={EXTERNAL_LINKS.midlouSteamAccount.label}
 				rel="noreferrer" target="_blank">
 				<Icon icon={faSteam} size="4x" />
 			</a>
 
-			<a className="mx-3 stylized-link text-7xl" href={ExternalLinks.github.link} title={ExternalLinks.github.label}
+			<a className="mx-3 stylized-link text-7xl" href={EXTERNAL_LINKS.github.link} title={EXTERNAL_LINKS.github.label}
 				rel="noreferrer" target="_blank">
 				<Icon icon={faGithub} size="4x" />
 			</a>
 
-			<a className="mx-3 stylized-link text-7xl" href={ExternalLinks.playMinecraftMiceblocks.link} title={ExternalLinks.playMinecraftMiceblocks.label}
+			<a className="mx-3 stylized-link text-7xl" href={EXTERNAL_LINKS.playMinecraftMiceblocks.link} title={EXTERNAL_LINKS.playMinecraftMiceblocks.label}
 				rel="noreferrer" target="_blank">
 				<Icon icon={faGlobeAmericas} size="4x" />
 			</a>

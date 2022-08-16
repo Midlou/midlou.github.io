@@ -1,4 +1,4 @@
-{
+export const EXTERNAL_LINKS = {
 	"github": {
 		"label": "Github Repository link",
 		"link": "https://github.com/Midlou/midlou.github.io/tree/source"

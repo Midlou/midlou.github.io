@@ -9,7 +9,7 @@ import MainLayout from '@components/layouts/main';
 import ContainerFlex from "@components/containers/container-flex";
 import DoomFireController from "@controllers/doom-fire/doom-fire.controller";
 
-import ExternalLinks from "@content/external-links.json";
+import { EXTERNAL_LINKS } from "@constants/external-links";
 
 const PageContent = () => {
 	const {
@@ -145,7 +145,7 @@ const PageContent = () => {
 				<DividerLabel label="Info" />
 				<b>Inspired by:</b>
 				{
-					ExternalLinks.doomInspirations.map((value, key) => {
+					EXTERNAL_LINKS.doomInspirations.map((value, key) => {
 						return <div key={key}>
 							<a className="stylized-link" href={value.link} rel="noreferrer" target="_blank">{value.label}</a>
 						</div>

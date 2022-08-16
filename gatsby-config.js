@@ -31,6 +31,7 @@ module.exports = {
 					"@images": path.resolve(__dirname, 'src/images'),
 					"@shared": path.resolve(__dirname, 'src/shared'),
 					"@content": path.resolve(__dirname, 'src/content'),
+					"@constants": path.resolve(__dirname, 'src/constants'),
 					"@components": path.resolve(__dirname, 'src/components'),
 					"@controllers": path.resolve(__dirname, 'src/controllers'),
 				},

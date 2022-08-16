@@ -6,6 +6,7 @@
 			"@images/*": ["images/*"],
 			"@shared/*": ["shared/*"],
 			"@content/*": ["content/*"],
+			"@constants/*": ["constants/*"],
 			"@components/*": ["components/*"],
 			"@controllers/*": ["controllers/*"],
 		}
