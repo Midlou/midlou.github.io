@@ -4,6 +4,9 @@ import * as React from "react";
 import MainLayout from '@components/layouts/main';
 import ResponsiveText from "@components/text/responsive-text";
 import ContainerFlex from "@components/containers/container-flex";
+import { MENU_ITEMS } from "@constants/menu";
+import { navigatePage } from "@shared/helpers";
+import Panel from "@components/panels/panel";
 
 const PageContent = () => {
 	return <ContainerFlex>
@@ -17,24 +20,31 @@ const PageContent = () => {
 					src="../images/mid-icon-light-64x64-a1.svg"
 				/>
 			</div>
-			<h1 className="sm:text-2xl md:text-4xl leading-10 tracking-tight">
-				<span className="font-bold">Yo! I make stuff! ...</span> <small className="text-base text-gray-300">I can't find a better definition</small>
-			</h1>
 			<ResponsiveText>
-				I mean, "by definition" I am a programmer;
-				3D Modeler (includes 3D printing);
-				level designer; audio, video image creator/editor;
-				And "<a href="https://www.urbandictionary.com/define.php?term=Gambiarra" className="stylized-link" target={"_blank"} rel={"noreferrer"}><i>gambiarra</i></a>" professional.
-				I speak Brazilian Portuguese and English.
-			</ResponsiveText>
-			<ResponsiveText>
-				First of all, this website is not a <i className="text-inherit">"look my web skills"</i> or <i className="text-inherit">"this is the best design I can make"</i>.
-				I like to think of it as a hub where you can access my entire trajectory on the internet.
+				Welcome. Here you will find a lot of random stuff like prototypes or hobbies.
+				I like to think of this website as a hub where you can check my trajectory on the internet.
 			</ResponsiveText>
 			<ResponsiveText>
 				<i><a className="stylized-link" href={"https://midlou.github.io/"} target={"_blank"} rel={"noreferrer"}>https://midlou.github.io/</a></i> is more like a repository or storehouse with all my public projects.
-				These days even I have a hard time finding all the things I've made.
+				These days even I have a hard time finding all the things I have made.
 			</ResponsiveText>
+
+			<Panel className="bg-gray-800 overflow-x-auto">
+				<ul className="rounded-lg border border-zinc-800">
+					{
+						MENU_ITEMS.map((page, index) => {
+							return <li key={page?.value || index} onClick={(e) => navigatePage(e, page.link)} tabIndex={0}
+								className={`
+							${'Home' === page.label ? " bg-slate-700 border-blue-500 " : " hover:bg-slate-700 hover:border-blue-500 border-zinc-600 "}
+							px-6 py-2 w-full border-l-4 cursor-pointer default-focus-light
+						`}>
+
+								{page.label}
+							</li>
+						})
+					}
+				</ul>
+			</Panel>
 		</div>
 	</ContainerFlex>
 }
