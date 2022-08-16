@@ -88,3 +88,11 @@
 .stylized-link {
     @apply hover:underline text-cyan-400 hover:text-cyan-500;
 }
+
+.default-focus-light {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500
+}
+
+.default-focus-dark {
+    @apply focus:outline-none focus:ring-2 focus:ring-gray-700;
+}
