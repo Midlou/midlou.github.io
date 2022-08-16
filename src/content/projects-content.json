@@ -61,5 +61,27 @@
 				"link": "https://www.planetminecraft.com/texture-pack/mice-blocks-x16/"
 			}
 		]
+	},
+	{
+		"aboutPath": "/projects/cube/about",
+		"pageLink": "/projects/cube",
+		"name": "cube",
+		"label": "The cube",
+		"description": "The cube",
+		"textContent": [
+			{
+				"order": 1,
+				"title": "",
+				"text": "The cube.",
+				"footer": ""
+			}
+		],
+		"links": [
+			{
+				"label": "Main page",
+				"link": "/projects/cube",
+				"isInternal": true
+			}
+		]
 	}
 ]
