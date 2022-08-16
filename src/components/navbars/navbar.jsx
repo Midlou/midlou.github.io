@@ -11,9 +11,9 @@ export default function NavBar({ title = '', setDrawerIsOpen = () => { } }) {
 		<div className="flex flex-wrap justify-between items-center mx-auto max-w-7xl">
 			<div className="flex justify-between items-center">
 				<button type="button" onClick={() => setDrawerIsOpen(true)}
-					className="inline-flex items-center text-lg text-gray-400 hover:text-white rounded-lg hover:bg-gray-600 default-focus-light">
+					className="inline-flex items-center text-4xl text-gray-400 hover:text-white rounded-lg hover:bg-gray-600 default-focus-light">
 
-					<Icon className="block h-8 w-8" icon={faBars} />
+					<Icon icon={faBars} />
 
 				</button>
 
@@ -30,14 +30,7 @@ export default function NavBar({ title = '', setDrawerIsOpen = () => { } }) {
 					{title}
 				</h3>
 			</div>
-			<div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-				<button type="button" onClick={() => { }}
-					className="inline-flex items-center text-lg text-gray-400 hover:text-white rounded-lg hover:bg-gray-600 default-focus-light">
-
-					<DonateButton />
-				</button>
-
-			</div>
+			<DonateButton />
 		</div>
 
 	</nav>

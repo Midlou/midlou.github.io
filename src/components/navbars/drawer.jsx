@@ -21,7 +21,7 @@ export default function Drawer({ children, title = "", isOpen, setIsOpen = () =>
                         </h3>
                         <button type="button" onClick={() => { setIsOpen(false) }}
                             className="text-gray-400 rounded-lg text-sm inline-flex hover:bg-gray-600 hover:text-white p-1" tabIndex={isOpen ? 0 : -1}>
-							<Icon className="block h-8 w-8" icon={faTimes} />
+							<Icon className="text-3xl" icon={faTimes} />
 
                             <span className="sr-only">Close modal</span>
                         </button>
