@@ -83,5 +83,12 @@
 				"isInternal": true
 			}
 		]
+	},
+	{
+		"aboutPath": "/projects/little_red_star/about",
+		"pageLink": "/projects/little_red_star/about",
+		"name": "little_red_star",
+		"label": "Little Red Star",
+		"description": "Map made for the Escape From Black Mesa competition"
 	}
 ]
