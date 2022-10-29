@@ -15,8 +15,8 @@ const PageContent = () => {
 		<div>
 			<ResponsiveText>
 				Little Red Star is a map I made for the competition
-				<HyperLink link={"https://lambdabuilds.lambdageneration.com/escape-from-black-mesa"}> LambdaBuilds: Escape From Black Mesa</HyperLink>.
-				Here you will find the patch notes of releases of the map. You can download the VMF file of the release b1.
+				<HyperLink link={"https://lambdabuilds.lambdageneration.com/escape-from-black-mesa"}> LambdaBuilds: Escape From Black Mesa</HyperLink>. It won <b className="text-[#a58573]">3rd place</b>.
+				Here you will find the patch notes and file releases of the map. <b>You can download the VMF file of the release b1.</b>
 			</ResponsiveText>
 		</div>
 		<DividerLabel label="File releases" />
@@ -26,7 +26,7 @@ const PageContent = () => {
 					<tr>
 						<th className="text-left w-[25%]">Name</th>
 						<th className="text-left">Description</th>
-						<th className="text-left">Link</th>
+						<th className="text-left">Files</th>
 					</tr>
 				</thead>
 				<tbody>
