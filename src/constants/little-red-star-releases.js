@@ -3,6 +3,7 @@ export const LITTLE_RED_STAR_RELEASES = [
 		name: "b1b",
 		description: "Minor fixes and adjustments",
 		patch_items: [
+			"Fixed finale lighting",
 			"Minor adjustments to the lighting",
 			"Minor adjustments to scripting",
 			"Fixed missing flashlight model",
