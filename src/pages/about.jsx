@@ -3,8 +3,11 @@ import * as React from "react";
 import MainLayout from '@components/layouts/main';
 import ResponsiveText from "@components/text/responsive-text";
 import ContainerFlex from "@components/containers/container-flex";
+import DefaultList from "@components/lists/default-list";
+import { PROFILE_ITEMS } from "@constants/profiles";
 
 const PageContent = () => {
+
 	return <ContainerFlex>
 		<div className="px-5 text-justify md:max-w-3xl">
 			<h1 className="sm:text-xl md:text-2xl leading-10 tracking-tight">
@@ -17,6 +20,7 @@ const PageContent = () => {
 				And "<a href="https://www.urbandictionary.com/define.php?term=Gambiarra" className="stylized-link" target={"_blank"} rel={"noreferrer"}><i>gambiarra</i></a>" professional.
 				I speak Brazilian Portuguese and English.
 			</ResponsiveText>
+			<DefaultList items={PROFILE_ITEMS}/>
 		</div>
 	</ContainerFlex>
 }
