@@ -99,5 +99,5 @@ const PageContent = () => {
 	</Canvas>
 }
 
-const Layout = () => <MainLayout title={"Home"} Component={<PageContent />} />;
+const Layout = () => <MainLayout title={"The Cube"} Component={<PageContent />} />;
 export default Layout;
