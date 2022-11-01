@@ -1,5 +1,12 @@
 export const LITTLE_RED_STAR_RELEASES = [
 	{
+		name: "b1c",
+		description: "Minor fix",
+		patch_items: [
+			"Fixed an edge case where you could skip activation of generator 2 and 3... Thank you generator 1 puzzle, lovely... you will haunt me for the rest of my life."
+		]
+	},
+	{
 		name: "b1b",
 		description: "Minor fixes and adjustments",
 		patch_items: [

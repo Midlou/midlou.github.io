@@ -8,7 +8,7 @@ function getItemListContent(item) {
 
 const DefaultList = ({ items = [] }) => {
 	return <div className="flex">
-		<ul className="rounded-lg w-96">
+		<ul className="rounded-lg w-full">
 			{
 				items.map((item) => {
 					return <li key={item.value} className="px-4 py-2 border-b border-slate-500 w-full">
