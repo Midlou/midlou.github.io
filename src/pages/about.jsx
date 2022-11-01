@@ -13,7 +13,7 @@ const PageContent = () => {
 			<h1 className="sm:text-xl md:text-2xl leading-10 tracking-tight">
 				<span className="font-bold">Yo! I make stuff! ...</span> <small className="text-base text-gray-300">I can't find a better definition</small>
 			</h1>
-			<ResponsiveText>
+			<ResponsiveText className="text-justify">
 				I mean, "by definition" I am a programmer;
 				3D Modeler (includes 3D printing);
 				level designer; audio, video image creator/editor;
