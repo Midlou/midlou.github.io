@@ -9,7 +9,7 @@ import { PROFILE_ITEMS } from "@constants/profiles";
 const PageContent = () => {
 
 	return <ContainerFlex>
-		<div className="px-5 text-justify md:max-w-3xl">
+		<div className="px-4 flex-col mx-auto lg:w-3/4 md:max-w-4xl">
 			<h1 className="sm:text-xl md:text-2xl leading-10 tracking-tight">
 				<span className="font-bold">Yo! I make stuff! ...</span> <small className="text-base text-gray-300">I can't find a better definition</small>
 			</h1>

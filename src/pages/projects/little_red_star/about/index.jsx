@@ -54,9 +54,9 @@ const PageContent = () => {
 				return <div key={index} className="mb-4">
 					<b>{release.name}</b>
 					<div className="flex">
-						<ul className="rounded-lg w-96 list-disc list-inside">
+						<ul className="rounded-lg w-full list-disc list-inside">
 							{
-								release.patch_items.map((item, index) => {
+								release.patch_items?.map((item, index) => {
 									return <li key={index} className="px-4 w-full">
 										{
 											item
