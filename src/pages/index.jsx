@@ -6,7 +6,6 @@ import ResponsiveText from "@components/text/responsive-text";
 import ContainerFlex from "@components/containers/container-flex";
 import { PROFILE_ITEMS } from "@constants/profiles";
 import Panel from "@components/panels/panel";
-import { navigatePageBlank } from "@shared/helpers";
 
 const PageContent = () => {
 	return <ContainerFlex>
@@ -28,18 +27,17 @@ const PageContent = () => {
 			I speak Brazilian Portuguese and English.
 		</ResponsiveText>
 		<Panel className="bg-gray-800 overflow-x-auto">
-			<ul className="rounded-lg border border-zinc-800">
+			<div className="rounded-lg border border-zinc-800 text-lg">
 				{
 					PROFILE_ITEMS.map((item, index) => {
-						return <li key={item?.value || index} onClick={(e) => navigatePageBlank(e, item.link)} tabIndex={0}
-							className={`text-lg px-6 py-2 w-full border-l-4 cursor-pointer default-focus-light hover:bg-slate-700 hover:border-blue-500 border-zinc-600`}>
-							<a href className="stylized-link" link={item.link}>
+						return <a href={item.link} link={item.link} key={item?.value || index} target={"_blank"} rel={"noreferrer"} tabIndex={0}>
+							<div className="stylized-link px-6 py-2 w-full border-l-4 cursor-pointer default-focus-light hover:bg-slate-700 hover:border-blue-500 border-zinc-600" >
 								{item.label}
-							</a>
-						</li>
+							</div>
+						</a>
 					})
 				}
-			</ul>
+			</div>
 		</Panel>
 	</div>
 </ContainerFlex>

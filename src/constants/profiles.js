@@ -13,5 +13,10 @@ export const PROFILE_ITEMS = [
 		"value": "planet_minecraft",
 		"label": "Planet Minecraft",
 		"link": "https://www.planetminecraft.com/member/midlou/"
+	},
+	{
+		"value": "github_profile",
+		"label": "Github Profile",
+		"link": "https://github.com/Midlou"
 	}
 ];
