@@ -20,7 +20,7 @@ const MainLayout = ({ title, Component }) => {
 			<link rel="icon" href={favicon} />
 			{/* <meta name="description" content="Helmet application" /> */}
 		</Helmet>
-		<div className="flex flex-col h-screen justify-between text-white">
+		<div className="flex flex-col h-screen justify-between text-white deadpixel">
 			<header>
                 <NavBar title={title} setDrawerIsOpen={setDrawerIsOpen} />
 			</header>

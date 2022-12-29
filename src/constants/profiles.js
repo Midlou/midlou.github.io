@@ -1,14 +1,17 @@
-import React from "react";
-
-import HyperLink from "@components/links/hyper-link";
-
 export const PROFILE_ITEMS = [
 	{
-		"value": "steam",
-		"element": <HyperLink link="https://steamcommunity.com/id/MidlouBR" label="Steam"/>,
+		"value": "twitter",
+		"label": "Twitter",
+		"link": "https://twitter.com/midlou15",
 	},
 	{
-		"value": "twitter",
-		"element": <HyperLink link="https://twitter.com/midlou15" label="Twitter"/>,
+		"value": "steam",
+		"label": "Steam Workshop",
+		"link": "https://steamcommunity.com/id/MidlouBR/myworkshopfiles/",
 	},
+	{
+		"value": "planet_minecraft",
+		"label": "Planet Minecraft",
+		"link": "https://www.planetminecraft.com/member/midlou/"
+	}
 ];

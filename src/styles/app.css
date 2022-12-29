@@ -86,7 +86,7 @@
 }
 
 .stylized-link {
-    @apply hover:underline text-cyan-400 hover:text-cyan-500;
+    @apply hover:underline text-blue-400 hover:text-blue-500;
 }
 
 .default-focus-light {
@@ -95,4 +95,17 @@
 
 .default-focus-dark {
     @apply focus:outline-none focus:ring-2 focus:ring-gray-700;
+}
+
+.deadpixel:before {
+	display: block;
+	width: 1px;
+	height: 1px;
+	background-color: rgb(255,0,245);
+	margin: 0px;
+	content: "";
+	position: fixed;
+	top: 75%;
+	left: 75%;
+	z-index: 99
 }

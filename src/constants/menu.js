@@ -8,10 +8,5 @@ export const MENU_ITEMS = [
 		"value": "projects",
 		"label": "Projects",
 		"link": "/projects"
-	},
-	{
-		"value": "about",
-		"label": "About",
-		"link": "/about"
 	}
 ];
