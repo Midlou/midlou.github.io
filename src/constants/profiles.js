@@ -18,5 +18,10 @@ export const PROFILE_ITEMS = [
 		"value": "github_profile",
 		"label": "Github Profile",
 		"link": "https://github.com/Midlou"
+	},
+	{
+		"value": "youtube_channel",
+		"label": "Youtube Channel",
+		"link": "https://www.youtube.com/@Midlou"
 	}
 ];
