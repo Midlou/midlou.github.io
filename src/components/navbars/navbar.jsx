@@ -8,7 +8,7 @@ import Icon from "@components/icons/icon";
 export default function NavBar({ title = '', setDrawerIsOpen = () => { } }) {
 	return <nav className="text-white text-center p-3 bg-gray-800 drop-shadow-lg">
 
-		<div className="flex flex-wrap justify-between items-center mx-auto max-w-7xl">
+		<div className="flex flex-wrap justify-between items-center mx-auto">
 			<div className="flex justify-between items-center">
 				<button type="button" onClick={() => setDrawerIsOpen(true)}
 					className="inline-flex items-center text-4xl text-gray-400 hover:text-white rounded-lg hover:bg-gray-600 default-focus-light">

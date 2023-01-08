@@ -7,14 +7,14 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from 'gatsby-background-image';
 
-import favicon from '@images/miceblocks/gold_block-32x.png';
+import favicon from '@images/projects/miceblocks/gold_block-32x.png';
 import MiceblocksFooter from '@components/navbars/miceblocks-footer';
 
 const MiceblocksLayout = ({ title, Component }) => {
 	const { miceblocksBgAsImage } = useStaticQuery(graphql`query {
 		miceblocksBgAsImage: file(
 			relativePath: { 
-				eq: "miceblocks/background-miceblocks-1920x1080.png" 
+				eq: "projects/miceblocks/background-miceblocks-1920x1080.png" 
 			},
 			sourceInstanceName: {
 				eq: "images"

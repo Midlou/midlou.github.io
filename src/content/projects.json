@@ -1,0 +1,36 @@
+[
+	{
+		"aboutPath": "/projects/doom/about",
+		"pageLink": "/projects/doom",
+		"name": "doom",
+		"label": "Doom fire",
+		"description": "Doom fire canvas with some basic parameter controls",
+		"thumbnailFileName": "doom-thumb-1"
+	},
+	{
+		"aboutPath": "/projects/miceblocks/about",
+		"pageLink": "/projects/miceblocks",
+		"name": "miceblocks",
+		"label": "Miceblocks Resource Pack",
+		"description": "Miceblocks is a resource pack that I worked on across Q3~Q4 of 2020",
+		"releaseDate": "21/05/2020",
+		"thumbnailFileName": "miceblocks-thumb-1"
+
+	},
+	{
+		"aboutPath": "/projects/cube/about",
+		"pageLink": "/projects/cube",
+		"name": "cube",
+		"label": "The cube",
+		"description": "The cube",
+		"thumbnailFileName": "the-cubethumb-1"
+	},
+	{
+		"aboutPath": "/projects/little_red_star/about",
+		"pageLink": "/projects/little_red_star/about",
+		"name": "little_red_star",
+		"label": "Little Red Star",
+		"description": "Map made for the Escape From Black Mesa competition",
+		"thumbnailFileName": "little-red-star-1"
+	}
+]

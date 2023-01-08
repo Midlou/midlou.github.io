@@ -50,7 +50,7 @@ const PageContent = () => {
 				placeholder="none"
 				alt="Miceblocks text logo"
 				loading="eager"
-				src="../../../images/miceblocks/mice-text-1024x256.png"
+				src="../../../images/projects/miceblocks/mice-text-1024x256.PNG"
 			/>
 		</div>
 

@@ -1,48 +1,76 @@
 import * as React from "react"
+import _ from "lodash";
 
-import Panel from "@components/panels/panel";
-import Button from "@components/buttons/button";
+import { graphql } from 'gatsby'
 import MainLayout from '@components/layouts/main';
-import { navigatePage } from '@shared/helpers';
-import ContainerFlex from "@components/containers/container-flex";
+import { getImageFromQueryData } from '@shared/helpers';
+import ContainerGrid from "@components/containers/container-grid";
+import { GatsbyImage } from "gatsby-plugin-image";
+import If from "@components/conditionals/if";
+import HyperLink from "@components/links/hyper-link";
 
-const PageContent = () => {
+const PageContent = ({ data }) => {
+	const projects = _.reverse(require('@content/projects.json'));
 
-	const data = require('@content/projects-content.json');
+	let imageData = data.allFile.edges;
 
-	return <ContainerFlex>
-		<Panel className="bg-gray-800 lg:w-3/4 md:w-full overflow-x-auto">
-			<table className="default-table">
-				<thead>
-					<tr>
-						<th className="text-left">Project</th>
-						<th className="text-left">Description</th>
-						<th className="text-center">Link</th>
-					</tr>
-				</thead>
-				<tbody>
-					{
-						data.map(project => {
-							return <tr onClick={(e) => navigatePage(e, project.pageLink)} key={project.name} 
-								className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600">
-								<td>{project.label}</td>
-								<td>{project.description}</td>
-								<td>
-									<Button
-										label={"About"}
-										toggle={true}
-										onClick={(e) => navigatePage(e, project.aboutPath)}
-										className={'w-full'}
-									/>
-								</td>
-							</tr>
-						})
-					}
-				</tbody>
-			</table>
-		</Panel>
-	</ContainerFlex>;
+	return <ContainerGrid className="px-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+		{
+			projects.map(project => {
+				// return <Panel className="bg-gray-800 lg:w-3/4 md:w-full overflow-x-auto">
+
+				// </Panel>
+				return <div key={project.name} className="w-full">
+					<div className="flex flex-col gap-2 justify-center container mx-auto">
+						<If render={project.thumbnailFileName}
+							body={() => {
+								return <div>
+									<a href={project.pageLink} target={"_self"} rel={"noreferrer"} tabIndex={0} >
+										<GatsbyImage className="min-w-fit rounded-md"
+											image={getImageFromQueryData(imageData, project.thumbnailFileName)}
+											alt={project.description || ''} />
+									</a>
+								</div>
+							}}
+						/>
+						<div>
+							<HyperLink link={project.pageLink} className="stylized-link text-2xl">
+								<b>
+									{project.label}
+								</b>
+							</HyperLink>
+						</div>
+						<div>
+							<span className="text-justify">
+								{project.description}
+							</span>
+						</div>
+
+					</div>
+				</div>
+			})
+		}
+	</ContainerGrid>;
 }
 
-const Layout = () => <MainLayout title={"Projects"} Component={<PageContent />} />;
+export const query = graphql`
+  query ($id: String) {
+	allFile(filter: {relativeDirectory: {eq: $id}}) {
+		edges {
+		  node {
+			childImageSharp {
+			  gatsbyImageData(layout: FULL_WIDTH placeholder: TRACED_SVG)
+			  parent {
+				... on File {
+				  name
+				}
+			  }
+			}
+		  }
+		}
+	  }
+  }
+`
+
+const Layout = (props) => <MainLayout title={"Projects"} Component={<PageContent {...props} />} />;
 export default Layout;
