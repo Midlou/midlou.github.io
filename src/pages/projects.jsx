@@ -34,11 +34,9 @@ const PageContent = ({ data }) => {
 							}}
 						/>
 						<div>
-							<HyperLink link={project.pageLink} className="stylized-link text-2xl">
-								<b>
-									{project.label}
-								</b>
-							</HyperLink>
+							<a href={project.pageLink} target={"_self"} rel={"noreferrer"} className="stylized-link text-2xl">
+								<b>{project.label}</b>
+							</a>
 						</div>
 						<div>
 							<span className="text-justify">

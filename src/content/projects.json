@@ -1,6 +1,5 @@
 [
 	{
-		"aboutPath": "/projects/doom/about",
 		"pageLink": "/projects/doom",
 		"name": "doom",
 		"label": "Doom fire",
@@ -8,7 +7,6 @@
 		"thumbnailFileName": "doom-thumb-1"
 	},
 	{
-		"aboutPath": "/projects/miceblocks/about",
 		"pageLink": "/projects/miceblocks",
 		"name": "miceblocks",
 		"label": "Miceblocks Resource Pack",
@@ -18,7 +16,6 @@
 
 	},
 	{
-		"aboutPath": "/projects/cube/about",
 		"pageLink": "/projects/cube",
 		"name": "cube",
 		"label": "The cube",
@@ -26,8 +23,7 @@
 		"thumbnailFileName": "the-cubethumb-1"
 	},
 	{
-		"aboutPath": "/projects/little_red_star/about",
-		"pageLink": "/projects/little_red_star/about",
+		"pageLink": "/projects/little_red_star",
 		"name": "little_red_star",
 		"label": "Little Red Star",
 		"description": "Map made for the Escape From Black Mesa competition",
