@@ -1,13 +1,12 @@
 import * as React from "react"
 import _ from "lodash";
 
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import MainLayout from '@components/layouts/main';
 import { getImageFromQueryData } from '@shared/helpers';
 import ContainerGrid from "@components/containers/container-grid";
 import { GatsbyImage } from "gatsby-plugin-image";
 import If from "@components/conditionals/if";
-import HyperLink from "@components/links/hyper-link";
 
 const PageContent = ({ data }) => {
 	const projects = _.reverse(require('@content/projects.json'));
@@ -25,18 +24,18 @@ const PageContent = ({ data }) => {
 						<If render={project.thumbnailFileName}
 							body={() => {
 								return <div>
-									<a href={project.pageLink} target={"_self"} rel={"noreferrer"} tabIndex={0} >
+									<Link to={project.pageLink}>
 										<GatsbyImage className="min-w-fit rounded-md"
 											image={getImageFromQueryData(imageData, project.thumbnailFileName)}
 											alt={project.description || ''} />
-									</a>
+									</Link>
 								</div>
 							}}
 						/>
 						<div>
-							<a href={project.pageLink} target={"_self"} rel={"noreferrer"} className="stylized-link text-2xl">
+							<Link to={project.pageLink} className="stylized-link text-2xl">
 								<b>{project.label}</b>
-							</a>
+							</Link>
 						</div>
 						<div>
 							<span className="text-justify">
