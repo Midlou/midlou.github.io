@@ -21,12 +21,12 @@ const MiceblocksLayout = ({ title, Component }) => {
 			}
 		) {
 			childImageSharp {
-					gatsbyImageData(
+				gatsbyImageData(
 					quality: 90
 					width: 1980
 					height: 1080
-					placeholder: BLURRED
-					formats: [WEBP]
+					placeholder: BLURRED,
+					outputPixelDensities: [1]
 				)
 			}
 		}
