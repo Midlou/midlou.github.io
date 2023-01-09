@@ -10,8 +10,8 @@
 		"pageLink": "/projects/miceblocks",
 		"name": "miceblocks",
 		"label": "Miceblocks Resource Pack",
-		"description": "Miceblocks is a resource pack that I worked on across Q3~Q4 of 2020",
-		"releaseDate": "21/05/2020",
+		"description": "Miceblocks is a resource pack that I worked on in 2020",
+		"releaseDate": "2020-05-21T00:00:00",
 		"thumbnailFileName": "miceblocks-thumb-1"
 
 	},
@@ -20,6 +20,7 @@
 		"name": "cube",
 		"label": "The cube",
 		"description": "The cube",
+		"releaseDate": "2022-06-14T00:00:00",
 		"thumbnailFileName": "the-cubethumb-1"
 	},
 	{
@@ -27,6 +28,7 @@
 		"name": "little_red_star",
 		"label": "Little Red Star",
 		"description": "Map made for the Escape From Black Mesa competition",
-		"thumbnailFileName": "little-red-star-1"
+		"thumbnailFileName": "little-red-star-1",
+		"releaseDate": "2022-10-18T00:00:00"
 	}
 ]

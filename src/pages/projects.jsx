@@ -9,7 +9,14 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import If from "@components/conditionals/if";
 
 const PageContent = ({ data }) => {
-	const projects = _.reverse(require('@content/projects.json'));
+	let projects = _.orderBy(require('@content/projects.json'), (project) => { 
+		let releaseDate = project.releaseDate;
+		if (!releaseDate) return 0;
+
+		let date = new Date(releaseDate);
+
+		return date.getTime();
+	}, 'desc');
 
 	let imageData = data.allFile.edges;
 
