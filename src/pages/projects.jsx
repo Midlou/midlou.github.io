@@ -52,11 +52,11 @@ const PageContent = ({ data }) => {
 
 export const query = graphql`
   query ($id: String) {
-	allFile(filter: {relativeDirectory: {eq: $id}}) {
+	allFile(filter: {relativeDirectory: {eq: $id}, extension: {ne: "svg"}}) {
 		edges {
 		  node {
 			childImageSharp {
-			  gatsbyImageData(layout: FULL_WIDTH placeholder: TRACED_SVG)
+			  gatsbyImageData(layout: FULL_WIDTH placeholder: BLURRED)
 			  parent {
 				... on File {
 				  name
