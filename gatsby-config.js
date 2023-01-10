@@ -1,11 +1,9 @@
 const path = require(`path`)
 
 module.exports = {
-	// pathPrefix: "/midlou.github.io",
-	// siteMetadata: {
-	// 	siteUrl: "https://www.yourdomain.tld",
-	// 	title: "midlou.github.io",
-	// },
+	siteMetadata: {
+		siteUrl: "midlou.com",
+	},
 	plugins: [
 		{
 			resolve: `gatsby-plugin-google-gtag`,
@@ -38,6 +36,7 @@ module.exports = {
 				extensions: []
 			}
 		},
+		'gatsby-plugin-cname',
 		`gatsby-plugin-fontawesome-css`,
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-image`,

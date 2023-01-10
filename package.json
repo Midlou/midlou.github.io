@@ -26,6 +26,7 @@
 		"gatsby": "^4.4.0",
 		"gatsby-background-image": "^1.6.0",
 		"gatsby-plugin-alias-imports": "^1.0.5",
+		"gatsby-plugin-cname": "^1.0.0",
 		"gatsby-plugin-fontawesome-css": "^1.2.0",
 		"gatsby-plugin-google-gtag": "^4.9.0",
 		"gatsby-plugin-image": "^2.9.1",
