@@ -2,7 +2,7 @@ const path = require(`path`)
 
 module.exports = {
 	siteMetadata: {
-		siteUrl: "midlou.com",
+		siteUrl: "https://www.midlou.com/",
 	},
 	plugins: [
 		{
