@@ -4,6 +4,7 @@
 		"name": "doom",
 		"label": "Doom fire",
 		"description": "Doom fire canvas with some basic parameter controls",
+		"releaseDate": "2020-01-01T00:00:00",
 		"thumbnailFileName": "doom-thumb-1"
 	},
 	{
@@ -13,7 +14,6 @@
 		"description": "Miceblocks is a resource pack that I worked on in 2020",
 		"releaseDate": "2020-05-21T00:00:00",
 		"thumbnailFileName": "miceblocks-thumb-1"
-
 	},
 	{
 		"pageLink": "/projects/cube",
@@ -21,14 +21,22 @@
 		"label": "The cube",
 		"description": "The cube",
 		"releaseDate": "2022-06-14T00:00:00",
-		"thumbnailFileName": "the-cubethumb-1"
+		"thumbnailFileName": "the-cube-thumb-1"
 	},
 	{
 		"pageLink": "/projects/little_red_star",
 		"name": "little_red_star",
 		"label": "Little Red Star",
 		"description": "Map made for the Escape From Black Mesa competition",
-		"thumbnailFileName": "little-red-star-1",
+		"thumbnailFileName": "little-red-star-thumb-1",
 		"releaseDate": "2022-10-18T00:00:00"
+	},
+	{
+		"pageLink": "/projects/arena_symmetrical",
+		"name": "arena_symmetrical",
+		"label": "Arena symmetrical",
+		"description": "TF2 map expired by popular achievement maps",
+		"thumbnailFileName": "arena-symmetrical-thumb-1",
+		"releaseDate": "2016-03-11T00:00:00"
 	}
 ]

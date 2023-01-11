@@ -6,18 +6,17 @@ import { LITTLE_RED_STAR_RELEASES } from "@constants/little-red-star-releases";
 import HyperLink from "@components/links/hyper-link";
 import ContainerFlex from "@components/containers/container-flex";
 import Panel from "@components/panels/panel";
-import ResponsiveText from "@components/text/responsive-text";
 import DividerLabel from "@components/dividers/divider-label";
 
 const PageContent = () => {
 	return <ContainerFlex className="px-4 flex-col mx-auto lg:w-3/4 md:max-w-4xl">
 		<DividerLabel label="Little Red Star" />
 		<div>
-			<ResponsiveText>
+			<p>
 				Little Red Star is a map I made for the competition
 				<HyperLink link={"https://lambdabuilds.lambdageneration.com/escape-from-black-mesa"}> LambdaBuilds: Escape From Black Mesa</HyperLink>. It won <b className="text-[#a58573]">3rd place</b>.
 				Here you will find the patch notes and file releases of the map. <b>You can download the VMF file of the release b1.</b>
-			</ResponsiveText>
+			</p>
 		</div>
 		<DividerLabel label="File releases" />
 		<Panel className="bg-gray-800 overflow-x-auto">

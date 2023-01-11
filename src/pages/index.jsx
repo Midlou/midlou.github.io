@@ -2,7 +2,6 @@ import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 
 import MainLayout from '@components/layouts/main';
-import ResponsiveText from "@components/text/responsive-text";
 import ContainerFlex from "@components/containers/container-flex";
 import { PROFILE_ITEMS } from "@constants/profiles";
 import Panel from "@components/panels/panel";
@@ -19,13 +18,13 @@ const PageContent = () => {
 					src="../images/mid-icon-light-64x64-a1.svg"
 				/>
 			</div>
-			<ResponsiveText className="text-justify mb-6 mt-3 md:mt-5">
+			<p className="text-justify mb-6 mt-3 md:mt-5 text-base sm:text-lg md:text-xl">
 				Programmer;
 				3D modeler and 3D printing;
 				level designer; audio, video and image creator/editor;
 				"<a href="https://www.urbandictionary.com/define.php?term=Gambiarra" className="stylized-link" target={"_blank"} rel={"noreferrer"}><i>Gambiarra</i></a>" professional.
 				I speak Brazilian Portuguese and English.
-			</ResponsiveText>
+			</p>
 			<Panel className="bg-gray-800 overflow-x-auto text-lg">
 				{
 					PROFILE_ITEMS.map((item, index) => {

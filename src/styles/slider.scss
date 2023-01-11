@@ -1,0 +1,50 @@
+.slider-dots {
+    display: block;
+    width: 100%;
+
+    list-style: none;
+
+    text-align: center;
+
+    li {
+        position: relative;
+        display: inline-block;
+        
+        margin-right: .25rem;
+        margin-left: .25rem;
+
+
+        button {
+            cursor: pointer;
+
+            // Hide numbers
+            color: transparent;
+
+            // Button appearance size
+            width: 48px;
+            height: 3px;
+
+            // Extra space for easy click
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+
+            box-sizing: content-box;
+            background-clip: padding-box;
+
+            opacity: .25;
+            outline: none;
+            background-color: #fff;
+            transition: opacity .25s ease;
+
+            &:hover, &:focus {
+                opacity: 1;
+            }
+        }
+    }
+
+    .slick-active {
+        button {
+            opacity: .75;
+        }
+    }
+}

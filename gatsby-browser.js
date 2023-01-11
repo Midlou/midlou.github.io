@@ -1,3 +1,5 @@
 import './src/styles/app.css'
 import './src/styles/table.scss'
+import './src/styles/slider.scss'
+import './src/styles/general.scss'
 import './src/styles/glow-hover.scss'
