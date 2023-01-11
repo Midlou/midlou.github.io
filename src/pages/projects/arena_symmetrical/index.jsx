@@ -46,6 +46,11 @@ const PageContent = ({ data }) => {
 				})
 			}
 		</ImageSlider>
+		<DividerLabel label="Related" />
+		<b>Gamebanana</b>
+		<a href="https://gamebanana.com/mods/421834" target={"_blank"}>
+			<img src="https://gamebanana.com/mods/embeddables/421834?type=large"/>
+		</a>
 	</ContainerFlex>;
 }
 
@@ -60,7 +65,7 @@ export const query = graphql`
 		  node {
 			id
 			childImageSharp {
-			  gatsbyImageData(layout: FULL_WIDTH placeholder: BLURRED)
+			  gatsbyImageData(placeholder: BLURRED)
 			}
 		  }
 		}
