@@ -17,7 +17,7 @@ const PageContent = ({ data }) => {
 		<DividerLabel label="Achievement arena symmetrical" />
 		<p>
 			<b>Achievement arena symmetrical</b> is a Team Fortress 2 map I made back in 2016, it was my first 100% original map.
-			It was expired by maps like achievement idlefight, achivement engineer and achievement awesomebox. 
+			It was inspired by maps like achievement idlefight, achievement engineer and achievement awesomebox. 
 			If I'm not mistaken, I never posted this map on the internet.
 		</p>
 		<br />
@@ -27,7 +27,7 @@ const PageContent = ({ data }) => {
 		</p>
 		<br />
 		<p>
-			It's important for me to let you know that when I made this map I had less than 6 months of level design and Hammer Editor experience, so expect some weird stuff.
+			It's important to let you know that when I made this map I had less than 6 months of level design and Hammer Editor experience, so expect some weird stuff.
 		</p>
 		<br />
 		<p>
