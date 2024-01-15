@@ -3,7 +3,7 @@ import { useState } from 'react'
 import MidIconLight from "../assets/icons/mid-icon-light-1.svg";
 
 // components
-import MainLayout from '../components/layouts/main';
+import MainLayout from '../components/layouts/main-layout';
 
 // constants
 import { PROFILE_ITEMS } from '../constants/profiles';

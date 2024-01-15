@@ -5,7 +5,7 @@ import _ from "lodash";
 import { Link } from 'react-router-dom';
 
 // components
-import MainLayout from '../components/layouts/main';
+import MainLayout from '../components/layouts/main-layout';
 
 // constants
 import { PROJECT_ITEMS } from '../constants/projects'

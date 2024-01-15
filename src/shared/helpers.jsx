@@ -1,6 +1,6 @@
 import _ from "lodash";
 
-export function getCurrentYear() {
+export function get_current_year() {
     return new Date().getFullYear();
 }
 
