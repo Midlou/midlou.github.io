@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import { Helmet, HelmetProvider } from "react-helmet-async";
+// import { ToastContainer } from "react-toastify";
+// import 'react-toastify/dist/ReactToastify.css';
 
 // components
 import NavBar from "../navbars/header";
@@ -9,28 +8,21 @@ import Footer from "../navbars/footer";
 import Drawer from "../navbars/drawer";
 import DrawerItem from "../navbars/drawer-item.jsx";
 
-// icon
-import favicon from '../../assets/icons/mid-icon-light-1.svg';
-
 // constants
 import { MENU_ITEMS } from "../../constants/menu-items.js";
 
-const MainLayout = ({ title, Component }) => {
+const MainLayout = ({ title, children }) => {
 	const [isDrawerOpen, setDrawerIsOpen] = useState(false);
 
-	return <HelmetProvider>
-		<ToastContainer position='bottom-left' autoClose={5000} theme="dark" />
+	return <>
+		{/* <ToastContainer position='bottom-left' autoClose={5000} theme="dark" /> */}
 
-		<Helmet>
-			<title>{`${title} - Midlou`}</title>
-			<link rel="icon" href={favicon} />
-		</Helmet>
 		<div className="flex flex-col h-screen justify-between text-white deadpixel">
 			<header>
 				<NavBar title={title} setDrawerIsOpen={setDrawerIsOpen} />
 			</header>
 			<main className="flex-grow bg-gradient-to-r from-slate-600 to-slate-700">
-				{Component}
+				{children}
 			</main>
 			<footer>
 				<Footer />
@@ -46,7 +38,7 @@ const MainLayout = ({ title, Component }) => {
 			</Drawer>
 		</div>
 
-	</HelmetProvider>
+	</>
 }
 
 export default MainLayout;

@@ -13,7 +13,7 @@ import MiceblocksTextImage from "../../assets/images/miceblocks/miceblocks-text-
 import '../../styles/glow-hover.css'
 import { PARTICLE_OPTIONS } from "../../constants/miceblocks-particle-options";
 
-const PageContent = () => {
+const MiceblocksContent = () => {
 	const [init, setInit] = useState(false);
 
 	useEffect(() => {
@@ -34,7 +34,7 @@ const PageContent = () => {
 
 		<div className="grid container mx-auto py-3">
 			<div className="flex justify-center container mx-auto py-3">
-				<img src={MiceblocksTextImage} className="block" alt="Miceblocks title text" />
+				<img src={MiceblocksTextImage.src} className="block" alt="Miceblocks title text" />
 			</div>
 
 			<div className="mt-10 flex justify-center">
@@ -49,5 +49,4 @@ const PageContent = () => {
 	</div>;
 }
 
-const Layout = () => <MiceblocksLayout title={"Miceblocks"} Component={<PageContent />} />;
-export default Layout;
+export default MiceblocksContent;

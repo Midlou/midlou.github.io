@@ -7,7 +7,6 @@ import MidIconLight from "../../assets/icons/mid-icon-light-1.svg";
 
 // constants
 // import { EXTERNAL_LINKS } from "@constants/external-links";
-import { Link } from "react-router-dom";
 
 const MiceblocksFooter = () => {
 	return <div className="text-white text-center p-5 bg-gray-800">
@@ -34,11 +33,11 @@ const MiceblocksFooter = () => {
 		</p>
 
 		<div className="mb-5 flex justify-center">
-			<Link to={"/"}>
+			<a href="/">
 				<div className="flex justify-center container mx-auto py-3">
-					<img src={MidIconLight} className="block w-40" alt="Midlou logo" />
+					<img src={MidIconLight.src} className="block w-40" alt="Midlou logo" />
 				</div>
-			</Link>
+			</a>
 		</div>
 		<div>
 			<small>

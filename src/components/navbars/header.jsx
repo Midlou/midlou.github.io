@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 
+// icons
 import MidIconLight from "../../assets/icons/mid-icon-light-1.svg";
 
 export default function NavBar({ title = '', setDrawerIsOpen = () => { } }) {
@@ -14,9 +14,9 @@ export default function NavBar({ title = '', setDrawerIsOpen = () => { } }) {
 					<Bars3BottomLeftIcon className="h-10 w-10"/>
 				</button>
 
-				<Link to="/" className="ml-5 hidden sm:block">
-					<img src={MidIconLight} className="block h-8 w-8" alt="Website logo" />
-				</Link>
+				<a href="/" className="ml-5 hidden sm:block">
+					<img src={MidIconLight.src} className="block h-8 w-8" alt="Website logo" />
+				</a>
 
 				<h3 className="ml-5 mb-0 font-semibold hidden sm:block">
 					{title}

@@ -1,0 +1,46 @@
+---
+import BaseBody from '../body/base-body.astro';
+
+// components
+import MainLayout from '../components/layouts/main-layout';
+
+// constants
+import { PROFILE_ITEMS } from '../constants/profiles';
+
+// icon
+import MidIconLight from "../assets/icons/mid-icon-light-1.svg";
+
+const TITLE = 'Home';
+---
+
+<BaseBody title={TITLE}>
+	<MainLayout title={TITLE} client:load>
+		<div class={`flex justify-center container mx-auto py-3`}>
+			<div class="px-5 text-justify md:max-w-3xl">
+	
+				<div class="flex justify-center container mx-auto py-3">
+					<img src={MidIconLight.src} class="block w-1/4" alt="Midlou logo" />
+				</div>
+	
+				<p class="text-justify mb-6 mt-3 md:mt-5 text-base sm:text-lg md:text-xl">
+					Software engineer; Programmer <small>(naturally)</small>;
+					3D modeler and 3D printing;
+					level designer; audio, video and image creator/editor;
+					"<a href="https://www.urbandictionary.com/define.php?term=Gambiarra" class="stylized-link" target={"_blank"} rel={"noreferrer"}><i>Gambiarra</i></a>" professional.
+					I speak Brazilian Portuguese and English.
+				</p>
+				
+				{
+					PROFILE_ITEMS.map((item, index) => {
+						return <a href={item.link} target={"_blank"} rel={"noreferrer"} tab-index={0}>
+							<div class="sm:text-lg md:text-xl stylized-link px-6 py-2 w-full border-l-4 cursor-pointer default-focus-light hover:bg-slate-700 hover:border-blue-500 border-gray-700" >
+								{item.label}
+							</div>
+						</a>
+					})
+				}
+			</div>
+		</div>
+	</MainLayout>
+</BaseBody>
+

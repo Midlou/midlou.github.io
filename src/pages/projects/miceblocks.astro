@@ -1,0 +1,14 @@
+---
+import MiceblocksBody from "../../body/miceblocks-body.astro";
+
+// components
+import MiceblocksLayout from "../../components/layouts/miceblocks-layout";
+import MiceblocksContent from "../../content/projects/miceblocks-content";
+
+---
+
+<MiceblocksBody title="Miceblocks">
+    <MiceblocksLayout client:load>
+        <MiceblocksContent client:load/>
+    </MiceblocksLayout>
+</MiceblocksBody>
