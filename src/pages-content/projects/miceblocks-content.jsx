@@ -4,7 +4,7 @@ import { loadSlim } from "@tsparticles/slim";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 
 // images
-import MiceblocksTextImage from "../../assets/images/miceblocks/miceblocks-text-1024x256.png";
+import MiceblocksTextImage from "../../assets/projects/miceblocks/miceblocks-text-1024x256.png";
 
 // styles
 import '../../styles/glow-hover.css'
