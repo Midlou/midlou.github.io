@@ -1,6 +1,4 @@
 ---
-import MainLayout from '../components/layouts/main-layout';
-
 interface Props {
 	title: string;
 }
@@ -23,8 +21,6 @@ import '../styles/glow-hover.css';
 		<title>{title}</title>
 	</head>
 	<body>
-		<!-- <MainLayout title={title} client:load> -->
-			<slot />
-		<!-- </MainLayout> -->
+		<slot />
 	</body>
 </html>

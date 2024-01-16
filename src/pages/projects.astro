@@ -1,58 +1,15 @@
 ---
-import _ from "lodash";
+// astro
 import BaseBody from '../body/base-body.astro';
 
 // components
 import MainLayout from "../components/layouts/main-layout";
-
-// constants
-import { PROJECT_ITEMS } from "../constants/projects";
-
-let projects = _.orderBy(PROJECT_ITEMS, (project) => {
-	let release_date = project.release_date;
-	if (!release_date) return 0;
-
-	let date = new Date(release_date);
-
-	return date.getTime();
-}, 'desc');
+import ProjectsContent from "../pages-content/projects-content.jsx";
 ---
 
 <BaseBody title="Projects">
 	<MainLayout title={"Projects"} client:load>
-		<div class="grid container mx-auto py-3 px-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-			{
-				projects.map(project => {
-					return <div class="w-full">
-						<div class="flex flex-col gap-2 justify-center container mx-auto">
-							{
-								project.thumbnail_path
-									? (
-										<div>
-											<a href={project.page_link}>
-												<div class="min-w-fit rounded-md">
-													<img src={project.thumbnail_path} alt={project.description || ''} />
-												</div>
-											</a>
-										</div>
-									) : (null)
-							}
-							<div>
-								<a href={project.page_link} class="stylized-link text-2xl">
-									<b>{project.label}</b>
-								</a>
-							</div>
-							<div>
-								<span class="text-justify">
-									{project.description}
-								</span>
-							</div>
-	
-						</div>
-					</div>
-				})
-			}
-		</div>
+		<ProjectsContent client:load/>
 	</MainLayout>
 </BaseBody>
 

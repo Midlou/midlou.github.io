@@ -3,9 +3,6 @@ import React, { useEffect, useState } from "react";
 import { loadSlim } from "@tsparticles/slim";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 
-// components
-import MiceblocksLayout from "../../components/layouts/miceblocks-layout";
-
 // images
 import MiceblocksTextImage from "../../assets/images/miceblocks/miceblocks-text-1024x256.png";
 
