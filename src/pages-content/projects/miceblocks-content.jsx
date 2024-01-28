@@ -35,11 +35,11 @@ const MiceblocksContent = () => {
 			</div>
 
 			<div className="mt-10 flex justify-center">
-				<button className={`glow-on-hover text-white text-center text-2xl focus:ring-4 focus:ring-green-400 rounded py-3 px-5 drop-shadow-lg`}>
-					<a href="/files/Miceblocks-vA-12-2.zip">
+				<a href="/files/Miceblocks-vA-12-2.zip">
+					<button className={`glow-on-hover text-white text-center text-2xl focus:ring-4 focus:ring-green-400 rounded py-3 px-5 drop-shadow-lg`}>
 						<b>Download</b>
-					</a>
-				</button>
+					</button>
+				</a>
 			</div>
 		</div>
 
