@@ -25,7 +25,7 @@ const TITLE = 'Home';
 					<div class="font-mono text-lg">Midlou</div>
 				</div>
 	
-				<p class="text-justify mb-6 md:mt-5 text-base">
+				<p class="mb-6 mt-5 text-base">
 					Hello there! My pseudonym is Midlou, I'm a Software engineer; Programmer;
 					3D modeler and 3D printing;
 					level designer; audio, video and image creator/editor;
@@ -33,15 +33,22 @@ const TITLE = 'Home';
 					I speak Brazilian Portuguese and English.
 				</p>
 				
-				{
-					PROFILE_ITEMS.map((item, index) => {
-						return <span>
-							<a href={item.link} target={"_blank"} rel={"noreferrer"} tab-index={0} 
-								class="default-focus-light underline text-blue-400 hover:text-blue-500">{item.label}</a>{ PROFILE_ITEMS.length - 1 == index ? null : <span class="mx-1">•</span>}
-						</span>
-						
-					})
-				}
+				<div class="text-center">
+					{
+						PROFILE_ITEMS.map((item, index) => {
+							return <span>
+								<a href={item.link} target={"_blank"} rel={"noreferrer"} tab-index={0} class="default-focus-light underline text-blue-400 hover:text-blue-500">
+									{item.label}
+								</a>
+								{ 
+									PROFILE_ITEMS.length - 1 == index 
+										? null 
+										: <span class="mx-1">•</span>
+								}
+							</span>
+						})
+					}
+				</div>
 			</div>
 		</div>
 	</MainLayout>
