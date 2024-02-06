@@ -9,7 +9,7 @@ import MidIconLight from "../../assets/icons/mid-icon-light-1.svg";
 // import { EXTERNAL_LINKS } from "@constants/external-links";
 
 const MiceblocksFooter = () => {
-	return <div className="text-white text-center p-5 bg-gray-800">
+	return <div className="text-white text-center p-5 bg-gradient-to-r from-slate-700 to-slate-900">
 {/* 
 		<div className="mb-5">
 			<a className="mx-3 stylized-link text-7xl" href={EXTERNAL_LINKS.midlouSteamAccount.link} title={EXTERNAL_LINKS.midlouSteamAccount.label}

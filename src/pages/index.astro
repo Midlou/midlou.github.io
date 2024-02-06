@@ -16,14 +16,17 @@ const TITLE = 'Home';
 <BaseBody title={TITLE}>
 	<MainLayout title={TITLE} client:load>
 		<div class={`flex justify-center container mx-auto py-3`}>
-			<div class="px-5 text-justify md:max-w-3xl">
+			<div class="px-4 text-justify md:max-w-3xl">
 	
 				<div class="flex justify-center container mx-auto py-3">
 					<img src={MidIconLight.src} class="block w-1/4" alt="Midlou logo" />
 				</div>
+				<div class="flex justify-center container mx-auto">
+					<div class="font-mono text-lg">Midlou</div>
+				</div>
 	
-				<p class="text-justify mb-6 mt-3 md:mt-5 text-base sm:text-lg md:text-xl">
-					Software engineer; Programmer <small>(naturally)</small>;
+				<p class="text-justify mb-6 md:mt-5 text-base">
+					Hello there! My pseudonym is Midlou, I'm a Software engineer; Programmer;
 					3D modeler and 3D printing;
 					level designer; audio, video and image creator/editor;
 					"<a href="https://www.urbandictionary.com/define.php?term=Gambiarra" class="stylized-link" target={"_blank"} rel={"noreferrer"}><i>Gambiarra</i></a>" professional.
@@ -32,11 +35,11 @@ const TITLE = 'Home';
 				
 				{
 					PROFILE_ITEMS.map((item, index) => {
-						return <a href={item.link} target={"_blank"} rel={"noreferrer"} tab-index={0}>
-							<div class="sm:text-lg md:text-xl stylized-link px-6 py-2 w-full border-l-4 cursor-pointer default-focus-light hover:bg-slate-700 hover:border-blue-500 border-gray-700" >
-								{item.label}
-							</div>
-						</a>
+						return <span>
+							<a href={item.link} target={"_blank"} rel={"noreferrer"} tab-index={0} 
+								class="default-focus-light underline text-blue-400 hover:text-blue-500">{item.label}</a>{ PROFILE_ITEMS.length - 1 == index ? null : <span class="mx-1">•</span>}
+						</span>
+						
 					})
 				}
 			</div>

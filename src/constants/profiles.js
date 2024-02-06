@@ -16,17 +16,17 @@ export const PROFILE_ITEMS = [
 	},
 	{
 		"value": "github_profile",
-		"label": "Github profile",
+		"label": "Github",
 		"link": "https://github.com/Midlou"
 	},
 	{
 		"value": "youtube_channel",
-		"label": "Youtube Channel",
+		"label": "Youtube",
 		"link": "https://www.youtube.com/@Midlou"
 	},
 	{
 		"value": "gamebanana_profile",
-		"label": "Gamebanana profile",
+		"label": "Gamebanana",
 		"link": "https://gamebanana.com/members/1465235"
 	}
 ];

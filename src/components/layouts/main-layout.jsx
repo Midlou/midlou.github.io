@@ -21,7 +21,7 @@ const MainLayout = ({ title, children }) => {
 			<header>
 				<NavBar title={title} setDrawerIsOpen={setDrawerIsOpen} />
 			</header>
-			<main className="flex-grow bg-gradient-to-r from-slate-600 to-slate-700">
+			<main className="flex-grow bg-gradient-to-r from-slate-800 to-slate-900">
 				{children}
 			</main>
 			<footer>
