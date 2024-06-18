@@ -5,7 +5,7 @@ import { Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import MidIconLight from "../../assets/icons/mid-icon-light-1.svg";
 
 export default function NavBar({ title = '', setDrawerIsOpen = () => { } }) {
-	return <nav className="text-white text-center p-3 bg-gray-700 drop-shadow-lg">
+	return <nav className="text-white text-center p-3 bg-gray-800 drop-shadow-lg">
 
 		<div className="flex flex-wrap justify-between items-center mx-auto">
 			<div className="flex justify-between items-center">
