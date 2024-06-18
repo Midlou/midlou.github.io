@@ -11,7 +11,7 @@ export default function Drawer({ children, title = "", isOpen, setIsOpen = () =>
                 : " transition-all delay-200 opacity-0 -translate-x-full  ")
         }>
             <div className={
-                " w-3/4 sm:w-1/3 md:w-1/4 lg:w-1/5 left-0 absolute bg-zinc-900 h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
+                " w-3/4 sm:w-1/3 md:w-1/4 lg:w-1/5 left-0 absolute bg-gray-700 h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
                 (isOpen ? " -translate-x-0 " : " -translate-x-full ")
             }>
                 <div className="relative pb-10 flex flex-col default-scrollbar overflow-y-auto h-full">
