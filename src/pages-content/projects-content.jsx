@@ -13,7 +13,7 @@ function ProjectsContent() {
 		return date.getTime();
 	}, 'desc');
 
-	return <div className="grid container mx-auto py-3 px-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+	return <div className="text-white grid container mx-auto py-3 px-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 		{
 			projects.map(project => {
 				return <div key={project.name} className="w-full">
