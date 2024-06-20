@@ -5,20 +5,27 @@ import BaseBody from "../../body/base-body.astro";
 import MainLayout from "../../components/layouts/main-layout";
 
 import projectThumb from "../../assets/projects/little-red-star/little-red-star-thumb-1.jpg";
+import competitionLogo1 from "../../assets/projects/little-red-star/escape-from-black-mesa-logo-1.png";
+import screenshot1 from "../../assets/projects/little-red-star/screenshot-1.jpg";
+import screenshot2 from "../../assets/projects/little-red-star/screenshot-2.jpg";
+import screenshot3 from "../../assets/projects/little-red-star/screenshot-3.jpg";
+import screenshot4 from "../../assets/projects/little-red-star/screenshot-4.jpg";
+
+import cutStartSound from "../../assets/projects/little-red-star/start-scene-1.mp3";
 
 const TITLE = "Little Red Star";
 ---
 
 <BaseBody title={TITLE}>
     <MainLayout title={TITLE} client:load>
-        <div class={`flex justify-center container mx-auto py-3`}>
+        <div class={`text-white flex justify-center container mx-auto py-3 mb-[256px]`}>
             <div class="px-4 text-justify md:max-w-3xl">
                 <div class="flex justify-center container mx-auto py-3">
-					<img src={projectThumb.src} class="block w-1/2" alt="Little Red Star thumb" />
+					<img src={projectThumb.src} class="block" alt="Little Red Star thumb" />
 				</div>
 
-                <div>
-                    <p>
+                <div class="mb-5">
+                    <b>
                         Little Red Star is a map I made for the competition
                         <a
                             class="stylized-link"
@@ -26,19 +33,70 @@ const TITLE = "Little Red Star";
                             rel={"noreferrer"}
                             href={"https://lambdabuilds.lambdageneration.com/escape-from-black-mesa"}
                         >
-                            LambdaBuilds: Escape From Black Mesa</a
-                        >. It won <b class="text-[#a58573]">3rd place</b>. 
-                        <b>You can download the VMF file of the release b1.</b>
-                    </p>
+                            LambdaBuilds: Escape From Black Mesa
+                        </a>. You can download the VMF file of the release b1.
+                    </b>
+
+                    <div class="text-center text-xl my-10">
+                        <b>
+                            <a href="/files/little-red-star-comp-release-files.zip" target={"_blank"} rel={"noreferrer"} class="default-focus-light underline text-blue-400 hover:text-blue-500">
+                                Download VMF here
+                            </a>
+                        </b>
+                    </div>
                 </div>
 
-                <div class="text-center mt-10 text-lg">
-                    <b>
-                        <a href="/files/little-red-star-comp-release-files.zip" target={"_blank"} rel={"noreferrer"} class="default-focus-light underline text-blue-400 hover:text-blue-500">
-                            Download VMF here
-                        </a>
-                    </b>
-				</div>
+                <!-- <div class="my-5">
+                    <img src={screenshot1.src} class="block m-auto" alt="Screenshot of the map" />
+                    <small>Half of the time of the competition working in this room.</small>
+                </div> -->
+
+                <div class="indent-8 text-base">
+                    <p>Oh boy, where do I start? This project was something else for me, I must say. When the competition was announced, I thought it would be a cool opportunity to create a Half-Life map, specifically a Black Mesa map. The deadline for the project was one month.</p>
+
+                    <a
+                        class="stylized-link"
+                        target={"_blank"}
+                        rel={"noreferrer"}
+                        href={"https://lambdabuilds.lambdageneration.com/escape-from-black-mesa"}
+                    >
+                        <img src={competitionLogo1.src} class="block w-1/2 m-auto my-10" alt="LambdaBuilds: Escape From Black Mesa logo" />
+                    </a> 
+
+                    <p>My original idea was quite ambitious. I envisioned a plot twist involving a time loop, beginning with a cutscene where the player receives a pistol from someone before jumping into a portal. The player would traverse Xen or some sort of "Black Mesa backrooms," eventually discovering that the person who gave them the pistol was themselves all along. It was a time loop. The map was initially called "Recursion" because of this concept.</p>
+                    <p>As you can guess, the idea didn't work out as planned. Creating a detailed cutscene was challenging, and I got stuck on the portal room. After deciding this wouldn't work, I changed the plans. The new idea was a cutscene of the player running from the HECU. Cornered and out of ammo, the player would be forced to jump into the portal. I nearly went with this idea and even created an audio track for the cutscene.</p>
+                    
+                    <audio controls class="m-auto my-10">
+                        <source src={cutStartSound} type="audio/mpeg">
+                    </audio>
+
+                    <p>However, after testing it, I felt it was quite awkward. Forcing the player to jump into the portal felt unnatural. I ended up scrapping this idea as well.</p>
+                    <p>And just like that, I wasted 15 days, leaving me with only 15 days to finish the project. Back then, I had a full-time job and freelance work, plus I was working on a big college project. I decided to go into crunch mode to finish this project. I wanted to prove to myself that I was capable of creating something worth people's time.</p>
+
+                    <div class="my-5">
+                        <img src={screenshot2.src} class="m-auto" alt="Screenshot of the map" />
+                        <small>The final fight was the excuse for the 'escape' theme</small>
+                    </div>
+
+                    <p>After some thought, I realized I was wasting too much time on the first portal room. I chose to make a simple flyby cutscene with some easy-to-do text on the screen. Later, I discovered it was a good idea to keep things simple.</p>
+                    <p>With that out of the way, I decided to work on the finale. Yes, I had the start and end cutscenes finished before anything else in the project—judge me. Everything after that was an afterthought.</p>
+                    <p>I think it shows because everything after that was half-cooked. I came up with the idea of a central hub with three main puzzle rooms and an obvious progression system. Find a crowbar after the first puzzle, break wood planks blocking the entrance to the second puzzle, find a long jump module so you can jump a pit and access the third puzzle room. Very straightforward.</p>
+
+                    <div class="my-5">
+                        <img src={screenshot3.src} class="m-auto" alt="Screenshot of the map" />
+                        <small>The first generator I made ended up being used in the third room.</small>
+                    </div>
+
+                    <p>However, I wasted a lot of time working on the first puzzle room, more than I would like to admit. The first idea I had for a puzzle, the cables and plugs puzzle, was the one I went with. It was fun, and the logic was not too complicated, but it was quite buggy. After extensive testing, I decided to add an emergency "skip puzzle" lever in the corner of the room. This proved to be a wise decision because the puzzle broke in numerous ways for many people, even after some patch fixes.</p>
+
+                    <div class="my-5">
+                        <img src={screenshot4.src} class="m-auto" alt="Screenshot of the map" />
+                        <small>The entrance of the first generator.</small>
+                    </div>
+
+                    <p>Anyway, after completing the first puzzle, tick tock... I had only three days left until the deadline, with no second or third puzzle room ready, I went mad. I scrapped everything and made simple rooms with cool visual gimmicks. The second room featured a cool water section with a mysterious flooded parking lot—done. The third "puzzle" room was a giant "dam" structure, inspired by an artwork from the manga Blame!, with some easy parkour platforms. Finally, there was a rush for the exit of the facility and a "new" plot twist at the end.</p>
+
+                    <p>I think now you can understand why I didn't work on this project after finishing the first beta for the competition, I was exhausted. Nonetheless, it was quite worth it, as the map won <b class="text-[#a58573]">3rd place</b>.</p>
             </div>
         </div>
     </MainLayout>
