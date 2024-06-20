@@ -18,7 +18,7 @@ const MainLayout = ({ title, children }) => {
 		{/* <ToastContainer position='bottom-left' autoClose={5000} theme="dark" /> */}
 
 		<div className="flex flex-col min-h-screen justify-between deadpixel">
-			<header className="sticky top-0 z-50">
+			<header className="sticky top-0 z-40">
 				<NavBar title={title} setDrawerIsOpen={setDrawerIsOpen} />
 			</header>
 			<main className="flex-grow h-full">

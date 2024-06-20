@@ -5,7 +5,7 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 export default function Drawer({ children, title = "", isOpen, setIsOpen = () => {} }) {
     return (
         <div className={
-            " fixed overflow-hidden z-10 inset-0 transform ease-in-out text-white " +
+            " fixed overflow-hidden z-50 inset-0 transform ease-in-out text-white " +
             (isOpen
                 ? " transition-opacity opacity-100 duration-200 -translate-x-0  "
                 : " transition-all delay-200 opacity-0 -translate-x-full  ")
