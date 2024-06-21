@@ -21,23 +21,35 @@ const TITLE = "Little Red Star";
         <div class={`text-white flex justify-center container mx-auto py-3 mb-[256px]`}>
             <div class="px-4 text-justify md:max-w-3xl">
                 <div class="flex justify-center container mx-auto py-3">
-					<img src={projectThumb.src} class="block" alt="Little Red Star thumb" />
+                    <a 
+                        class="stylized-link"
+                        target={"_blank"}
+                        rel={"noreferrer"}
+                        href="https://steamcommunity.com/sharedfiles/filedetails/?id=2876712474"
+                    >
+					    <img src={projectThumb.src} class="block" alt="Little Red Star thumb" />
+                    </a>
 				</div>
 
-                <div class="mb-5">
-                    <b>
-                        Little Red Star is a map I made for the competition
-                        <a
-                            class="stylized-link"
-                            target={"_blank"}
-                            rel={"noreferrer"}
-                            href={"https://lambdabuilds.lambdageneration.com/escape-from-black-mesa"}
-                        >
-                            LambdaBuilds: Escape From Black Mesa
-                        </a> back in 2022. You can download the VMF file of the release b1.
-                    </b>
+                <div class="indent-8 text-base">
+                    Little Red Star is a map I made for the competition
+                    <a
+                        class="stylized-link"
+                        target={"_blank"}
+                        rel={"noreferrer"}
+                        href={"https://lambdabuilds.lambdageneration.com/escape-from-black-mesa"}
+                    >
+                        LambdaBuilds: Escape From Black Mesa
+                    </a> back in 2022. You can download the VMF file of the release b1.
 
-                    <div class="text-center text-xl my-10">
+                    <div class="text-center text-xl my-5">
+                        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2876712474" target={"_blank"} rel={"noreferrer"} class="default-focus-light underline text-blue-400 hover:text-blue-500">
+                            Steam Workshop
+                        </a>
+                    </div>
+
+                    <div class="text-center text-xl mb-7">
+    
                         <b>
                             <a href="/files/little-red-star-comp-release-files.zip" target={"_blank"} rel={"noreferrer"} class="default-focus-light underline text-blue-400 hover:text-blue-500">
                                 Download VMF here
