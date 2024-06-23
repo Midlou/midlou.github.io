@@ -1,0 +1,16 @@
+---
+import BaseBody from "../../body/base-body.astro";
+
+// components
+import MainLayout from "../../components/layouts/main-layout";
+
+import DoomFireContent from "../../pages-content/projects/doom-fire-content";
+
+const TITLE = "Doom fire";
+---
+
+<BaseBody title={TITLE}>
+    <MainLayout title={TITLE} client:load>
+        <DoomFireContent client:load/>
+    </MainLayout>
+</BaseBody>
