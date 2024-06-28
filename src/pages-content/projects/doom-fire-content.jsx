@@ -66,7 +66,7 @@ const DoomFireContent = () => {
 		}
 		return () => {
 			clearInterval(intervalID);
-			setInitialDataStructure();
+			// setInitialDataStructure();
 		}
 	}, [updateRate, windRandomness, decayRandomness, incandescentAir]);
 
@@ -183,7 +183,7 @@ const DoomFireContent = () => {
 				<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
 					<div>
 						<label className="block text-sm">
-							{'Fire source intensity: ' + selectedFireSourceIntensity}
+							{`Fire source intensity: ${selectedFireSourceIntensity}`}
 						</label>
 						<Input
 							setState={setSelectedFireSourceIntensity}
@@ -251,7 +251,7 @@ const DoomFireContent = () => {
 					</div>
 					<div>
 						<label className="block text-sm">
-							Wind randomness
+							{`Wind randomness: ${windRandomness}`}
 						</label>
 						<Input
 							setState={setWindRandomness}

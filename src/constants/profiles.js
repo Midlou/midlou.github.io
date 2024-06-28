@@ -5,6 +5,11 @@ export const PROFILE_ITEMS = [
 		"link": "https://twitter.com/midlou15",
 	},
 	{
+		"value": "artstation",
+		"label": "ArtStation",
+		"link": "https://www.artstation.com/midlou"
+	},
+	{
 		"value": "steam",
 		"label": "Steam Workshop",
 		"link": "https://steamcommunity.com/id/MidlouBR/myworkshopfiles/",
