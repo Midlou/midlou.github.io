@@ -1,5 +1,10 @@
 export const PROFILE_ITEMS = [
 	{
+		"value": "bluesky",
+		"label": "Bluesky",
+		"link": "https://bsky.app/profile/midlou15.bsky.social",
+	},
+	{
 		"value": "twitter",
 		"label": "Twitter",
 		"link": "https://twitter.com/midlou15",
