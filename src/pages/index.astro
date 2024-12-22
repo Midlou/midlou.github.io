@@ -26,16 +26,16 @@ const TITLE = 'Home';
 				</div>
 	
 				<p class="mb-6 mt-5 text-base">
-					Hello there! My pseudonym is Midlou, I'm a software engineer, programmer, 3D modeler and 3D printing enthusiast. In my spare time, I enjoy level design and audio, video, and image creation/editing.
-					"<a href="https://www.urbandictionary.com/define.php?term=Gambiarra" class="stylized-link" target={"_blank"} rel={"noreferrer"}><i>Gambiarra</i></a>" professional.
+					Hello there! My pseudonym is Midlou, I'm a software engineer. In my spare time I enjoy level design, 3D modeling, 3D printing, audio, video, and image creation/editing.
+					"<a href="https://www.urbandictionary.com/define.php?term=Gambiarra" class="stylized-link" target={"_blank"} rel={"noreferrer"}><i>Gambiarra</i></a>" professional,
 					I speak both Brazilian Portuguese and English.
 				</p>
-				
+
 				<div class="text-center">
 					{
 						PROFILE_ITEMS.map((item, index) => {
 							return <span>
-								<a href={item.link} target={"_blank"} rel={"noreferrer"} tab-index={0} class="default-focus-light underline text-blue-400 hover:text-blue-500">{item.label}</a>
+								<a href={item.link} target={"_blank"} rel={"noreferrer"} tab-index={0} class="default-focus-light stylized-link">{item.label}</a>
 								{ 
 									PROFILE_ITEMS.length - 1 == index 
 										? null 
