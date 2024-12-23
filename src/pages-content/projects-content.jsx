@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { DateTime } from "luxon";
 
 // constants
 import { PROJECT_ITEMS } from '../constants/projects'
@@ -18,6 +19,11 @@ function ProjectsContent() {
 			projects.map(project => {
 				return <div key={project.name} className="w-full">
 					<div className="flex flex-col gap-2 justify-center container mx-auto">
+						<div>
+							<span className="text-gray-400">
+								{ DateTime.fromISO(project.release_date).toLocaleString(DateTime.DATE_SHORT) }
+							</span>
+						</div>
 						{
 							project.thumbnail_path
 								? (
