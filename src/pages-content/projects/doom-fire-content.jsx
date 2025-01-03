@@ -47,11 +47,13 @@ const DoomFireContent = () => {
 		setFireArray(newFireArray);
 	}, [selectedFireSourceIntensity]);
 
+	// Reset everything after change of width or height
 	useEffect(() => {
 		setUpdateRate(0);
 		setInitialDataStructure();
 	}, [fireWidth, fireHeight]);
 
+	// If update rate is valid, when start render routine
 	useEffect(() => {
 		let intervalID;
 
@@ -61,19 +63,26 @@ const DoomFireContent = () => {
 
 			intervalID = setInterval(() => {
 				calculateFirePropagation();
+
+				// We have to render the canvas only after the fire propagation calc is finished,
+				// although it seems that rendering the canvas on each row/column calculation is more efficient,
+				// doing that will break the fire effect 
 				renderCanvas(canvasCtx);
 			}, updateRate);
 		}
 		return () => {
 			clearInterval(intervalID);
-			// setInitialDataStructure();
 		}
 	}, [updateRate, windRandomness, decayRandomness, incandescentAir]);
 
 	function toggleInterval(forceDisable = false) {
-		if (!isPrepared) setInitialDataStructure();
+		if (!isPrepared) {
+			setInitialDataStructure();
+		}
 
-		if (updateRate !== 0 || forceDisable) return setUpdateRate(0);
+		if (updateRate !== 0 || forceDisable) {
+			return setUpdateRate(0);
+		}
 
 		setUpdateRate(selectedUpdateRate);
 	}
@@ -90,8 +99,10 @@ const DoomFireContent = () => {
 		for (let currentPixel = 0; currentPixel < numberOfPixels; currentPixel++) {
 			if (numberOfPixels - fireWidth > currentPixel) {
 				fireArray[currentPixel] = 0;
+
 				continue;
 			}
+
 			fireArray[currentPixel] = selectedFireSourceIntensity;
 		}
 
@@ -107,16 +118,22 @@ const DoomFireContent = () => {
 
 				let belowPixelIndex = currentPixelIndex + fireWidth;
 
-				if (belowPixelIndex >= fireWidth * fireHeight) continue;
+				if (belowPixelIndex >= (fireWidth * fireHeight)) {
+					continue;
+				}
 
 				let decay = Math.round(Math.random() * Math.abs(decayRandomness));
 				let belowPixelFireIntensity = fireArray[belowPixelIndex];
 
-				let newFireIntensity = belowPixelFireIntensity - decay >= 0
-					? belowPixelFireIntensity - (decay)
-					: incandescentAir
-						? fireArray[currentPixelIndex]
-						: 0;
+				let fireIntensityAfterDecay = belowPixelFireIntensity - decay;
+
+				if (fireIntensityAfterDecay >= 0) {
+
+					var newFireIntensity = fireIntensityAfterDecay;
+				} else {
+
+					var newFireIntensity = incandescentAir ? fireArray[currentPixelIndex] : 0;
+				}
 
 				let randomizedWindValue = Math.round(Math.random() * windRandomness);
 
@@ -137,7 +154,7 @@ const DoomFireContent = () => {
 				let colorString = fireIntensity ? FIRE_COLORS_PALETTE[fireIntensity] : FIRE_COLORS_PALETTE[0];
 
 				ctx.beginPath();
-				ctx.fillStyle = `rgb(${colorString})` || '#000';
+				ctx.fillStyle = `rgb(${colorString})`;
 				ctx.fillRect(column * scaleMultiplier, row * scaleMultiplier, fireWidth, fireHeight);
 				ctx.fill();
 			}
