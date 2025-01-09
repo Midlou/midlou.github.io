@@ -38,5 +38,10 @@ export const PROFILE_ITEMS = [
 		"value": "gamebanana_profile",
 		"label": "Gamebanana",
 		"link": "https://gamebanana.com/members/1465235"
+	},
+	{
+		"value": "s8box_profile",
+		"label": "S&box",
+		"link": "https://sbox.game/midlou"
 	}
 ];
