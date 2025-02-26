@@ -1,5 +1,5 @@
 ---
-import MiceblocksBody from "../../body/miceblocks-body.astro";
+import BaseBody from "../../body/base-body.astro";
 
 // components
 import MiceblocksLayout from "../../components/layouts/miceblocks-layout";
@@ -7,8 +7,8 @@ import MiceblocksContent from "../../pages-content/projects/miceblocks-content";
 
 ---
 
-<MiceblocksBody title="Miceblocks">
+<BaseBody title="Miceblocks">
     <MiceblocksLayout client:load>
         <MiceblocksContent client:load/>
     </MiceblocksLayout>
-</MiceblocksBody>
+</BaseBody>
