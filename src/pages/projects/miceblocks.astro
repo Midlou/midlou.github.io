@@ -1,14 +1,105 @@
 ---
 import BaseBody from "../../body/base-body.astro";
+import Particles from "astro-particles";
+import type { ISourceOptions } from "tsparticles-engine";
 
 // components
-import MiceblocksLayout from "../../components/layouts/miceblocks-layout";
-import MiceblocksContent from "../../pages-content/projects/miceblocks-content";
+import MiceblocksLayout from "../../components/layouts/miceblocks-layout.vue";
 
+// Assets
+import miceblocksTextImage from "../../assets/projects/miceblocks/miceblocks-text-1024x256.png";
+
+const options: ISourceOptions = {
+    fullScreen: {
+        enable: true,
+        zIndex: -10,
+    },
+    background: {
+        image: "url('/miceblocks-background-1920x1080.png')",
+        position: "top",
+        size: "cover",
+        repeat: "no-repeat",
+    },
+    fpsLimit: 30,
+    particles: {
+        number: { value: 120, density: { enable: true, value_area: 800 } },
+        color: { value: "#fff" },
+        shape: {
+            type: "edge",
+        },
+        opacity: {
+            animation: {
+                enable: true,
+                minimumValue: 0.05,
+                speed: 0.25,
+                sync: false,
+            },
+            random: {
+                enable: true,
+                minimumValue: 0.05,
+            },
+            value: { min: 0.25, max: 1 },
+        },
+        size: {
+            value: { min: 1, max: 5 },
+        },
+        move: {
+            enable: true,
+            speed: 0.5,
+            direction: "none",
+            random: true,
+            straight: false,
+            outMode: "out",
+            bounce: false,
+        },
+    },
+    interactivity: {
+        detectOn: "canvas",
+        events: {
+            onClick: { enable: false, mode: "repulse" },
+        },
+    },
+    retinaDetect: true,
+};
 ---
+
+<script>
+    import { type Engine } from "tsparticles-engine";
+    import { loadFull } from "tsparticles";
+
+    window.particlesInit = async function (engine: Engine) {
+        await loadFull(engine);
+    };
+</script>
 
 <BaseBody title="Miceblocks">
     <MiceblocksLayout client:load>
-        <MiceblocksContent client:load/>
+        <div class="h-screen">
+            <Particles
+                id="tsparticles"
+                options={options}
+                init="particlesInit"
+            />
+
+            <div class="grid container mx-auto py-3">
+                <div class="flex justify-center container mx-auto py-3">
+                    <img
+                        src={miceblocksTextImage.src}
+                        class="block"
+                        alt="Miceblocks title text"
+                    />
+                </div>
+
+                <div class="mt-10 flex justify-center">
+                    <a href="/files/Miceblocks-vA-12-2.zip">
+                        <button
+                            class="glow-on-hover text-white text-center text-2xl focus:ring-4 focus:ring-green-400 rounded py-3 px-5 drop-shadow-lg"
+                        >
+                            <b>Download</b>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
     </MiceblocksLayout>
 </BaseBody>

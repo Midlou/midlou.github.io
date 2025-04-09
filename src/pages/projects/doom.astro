@@ -2,9 +2,8 @@
 import BaseBody from "../../body/base-body.astro";
 
 // components
-import MainLayout from "../../components/layouts/main-layout";
-
-import DoomFireContent from "../../pages-content/projects/doom-fire-content";
+import MainLayout from "../../components/layouts/main-layout.vue";
+import DoomFireContent from "../../pages-content/projects/doom-fire-content.vue";
 
 const TITLE = "Doom fire";
 ---
@@ -14,3 +13,4 @@ const TITLE = "Doom fire";
         <DoomFireContent client:load/>
     </MainLayout>
 </BaseBody>
+
