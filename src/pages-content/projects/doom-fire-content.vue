@@ -1,5 +1,5 @@
 <template>
-	<div class="text-white flex justify-center container mx-auto py-3">
+	<div class="text-white flex justify-center container mx-auto p-3">
 		<div>
 			<div>
 				<DividerLabel label="Options" />
