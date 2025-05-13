@@ -33,7 +33,7 @@
 							</div>
 						</a>
 					</div>
-					<div>
+					<div class="line-clamp-3 break-all">
 						<a :href="project.page_link" class="stylized-link text-2xl">
 							<b>{{ project.label }}</b>
 						</a>

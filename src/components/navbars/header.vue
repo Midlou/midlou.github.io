@@ -15,6 +15,11 @@
                     {{ title }}
                 </h3>
             </div>
+			<div>
+				<a href='https://ko-fi.com/H2H2AH0S2' target='_blank' rel='noreferrer' class="px-4 py-3 hover:underline text-blue-400 hover:text-blue-500">
+					<slot>Support my work</slot>
+				</a>
+			</div>
         </div>
     </nav>
 </template>
