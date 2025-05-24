@@ -1,0 +1,16 @@
+---
+import BaseBody from "../../body/base-body.astro";
+
+// components
+import MainLayout from "../../components/layouts/main-layout.vue";
+
+import OutliveUnitComparatorContent from "../../pages-content/projects/outlive-unit-comparator-content/index.vue";
+
+const TITLE = "Outlive Unit Comparator";
+---
+
+<BaseBody title={TITLE}>
+    <MainLayout title={TITLE} client:load>
+        <OutliveUnitComparatorContent client:load/>
+    </MainLayout>
+</BaseBody>

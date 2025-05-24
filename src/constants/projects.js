@@ -8,6 +8,15 @@ export const PROJECT_ITEMS = [
 	// 	"thumbnail_path": "/assets/projects/doom-fire/doom-thumb-1.jpg"
 	// },
 	{
+		"page_link": "/projects/outlive_unit_comparator",
+		"name": "outlive_unit_comparator",
+		"label": "Outlive Unit Comparator",
+		"description": "Outlive Unit Comparator",
+		"release_date": "2025-05-14T00:00:00",
+		"thumbnail_path": "/assets/projects/to-do-thumb-1.png",
+		"tags": ['web', 'has_page']
+	},
+	{
 		"page_link": "/projects/doom",
 		"name": "doom",
 		"label": "Doom fire",

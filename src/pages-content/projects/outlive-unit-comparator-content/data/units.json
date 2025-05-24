@@ -1,0 +1,33 @@
+{
+	"units": [
+		{
+			"id": "soldier",
+			"name": "Soldado",
+			"image": "/assets/projects/outlive-unit-comparator/soldier.png",
+			"icon": "/assets/projects/outlive-unit-comparator/soldier-icon.png",
+			"stats": {
+				"health": 100,
+				"attack_damage": 5,
+				"armor": 0
+			},
+			"researches": [
+				{ "id": "r1", "name": "Metralhadora Avançada", "attributes": { "attack_damage": 2 }, "description": "Metralhadora Avançada" }
+			]
+		},
+		{
+			"id": "tank",
+			"name": "Tanque",
+			"image": "/assets/projects/outlive-unit-comparator/tank.png",
+			"icon": "/assets/projects/outlive-unit-comparator/tank-icon.png",
+			"stats": {
+				"health": 250,
+				"attack_damage": 35,
+				"armor": 5
+			},
+			"researches": [
+				{ "id": "r1", "name": "Blindagem básica", "attributes": { "armor": 3 }, "description": "Blindagem básica" },
+				{ "id": "r2", "name": "Esteira avançada", "attributes": { "speed": 0 }, "description": "Esteira avançada" }
+			]
+		}
+	]
+}
