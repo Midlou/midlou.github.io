@@ -1,6 +1,7 @@
 <template>
 	<div class="container mx-auto p-2 md:max-w-5xl">
-		<div class="text-white flex justify-center container mx-auto p-3">
+		<!-- Work in Progress Header -->
+		<div class="text-white flex justify-center p-3">
 			<div class="flex flex-col items-center justify-center text-center p-4">
 				<h1 class="text-4xl font-bold mb-2">🚧 Work in Progress</h1>
 				<p class="text-lg mb-2">
@@ -12,22 +13,16 @@
 			</div>
 		</div>
 
-		<!-- Unit Selection -->
-		<div class="grid grid-cols-12">
-			<div class="col-span-5">
+		<!-- Unit Selection (Responsive Grid) -->
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+			<!-- Unit Left -->
+			<div>
 				<DividerLabel label="Unidade 1" class="text-white" />
-
 				<UnitSelect v-model="selectedUnitLeft" :units="units" />
-
 				<img v-if="selectedUnitLeft?.image" :src="selectedUnitLeft?.image"
 					class="w-full h-32 object-contain mb-4" />
-
-				<!-- Researches for Unit Left -->
 				<div v-if="selectedUnitLeft" class="mt-4 text-white">
-					<h3 class="font-bold mb-2">
-						Pesquisas
-					</h3>
-
+					<h3 class="font-bold mb-2">Pesquisas</h3>
 					<div v-for="research in selectedUnitLeft.researches" :key="research.id"
 						class="flex items-center gap-2">
 						<input type="checkbox" :id="`research-left-${research.id}`" :value="research.id"
@@ -38,22 +33,14 @@
 				</div>
 			</div>
 
-			<div class="col-span-2"></div>
-
-			<div class="col-span-5">
+			<!-- Unit Right -->
+			<div>
 				<DividerLabel label="Unidade 2" class="text-white" />
-
 				<UnitSelect v-model="selectedUnitRight" :units="units" />
-
 				<img v-if="selectedUnitRight?.image" :src="selectedUnitRight?.image"
 					class="w-full h-32 object-contain mb-4" />
-
-				<!-- Researches for Unit Right -->
 				<div v-if="selectedUnitRight" class="mt-4 text-white">
-					<h3 class="font-bold mb-2">
-						Pesquisas
-					</h3>
-
+					<h3 class="font-bold mb-2">Pesquisas</h3>
 					<div v-for="research in selectedUnitRight.researches" :key="research.id"
 						class="flex items-center gap-2">
 						<input type="checkbox" :id="`research-right-${research.id}`" :value="research.id"
@@ -65,14 +52,17 @@
 			</div>
 		</div>
 
+		<!-- Stats -->
 		<StatBar v-for="(statData, statName) in preparedStatBars" :key="statName" :stat-data="statData"
 			:stat-name="statName" />
 
-		<div class="text-white">
+		<!-- To-Do List -->
+		<div class="text-white mt-6">
 			<DividerLabel label="TO-DO" class="text-white" />
 			<ul class="list-disc list-inside">
-				<li>Added all units</li>
-				<li>Added all buildings</li>
+				<li>Add all units</li>
+				<li>Add all buildings</li>
+				<li><s>Fix mobile responsibility</s></li>
 				<li>Music player</li>
 				<li>Better unit selection (filters, tags, modal)</li>
 				<li>Outlive interface</li>
@@ -80,6 +70,7 @@
 			</ul>
 		</div>
 	</div>
+
 </template>
 
 <script setup>
@@ -88,9 +79,6 @@ import { ref, watch } from 'vue';
 import StatBar from "./components/stat-bar.vue";
 import DividerLabel from '../../../components/dividers/divider-label.vue';
 import UnitSelect from './components/unit-select.vue';
-
-// import Popover from '../../../components/popvers/popver.vue';
-// import Tooltip from '../../../components/tooltips/tooltip.vue';
 
 // data
 import unitsData from './data/units.json';
@@ -161,6 +149,7 @@ function prepareStatBars() {
 			}
 		}
 
+		// Add base stat
 		currentStat.left_bars.push({
 			value: statValue,
 			description: localizationStrings[statName] || 'N/A'
@@ -198,13 +187,14 @@ function prepareStatBars() {
 			}
 		}
 
+		// Add base stat
 		currentStat.right_bars.push({
 			value: statValue,
 			description: localizationStrings[statName] || 'N/A'
 		});
 		currentStat.right_total += statValue;
 
-		// Add research attributes to bars list
+		// Add research stats
 		_.each(unitRightResearchs.value, (activeResearch, keyResearch) => {
 			if (!activeResearch) return;
 
