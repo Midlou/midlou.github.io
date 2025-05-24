@@ -75,8 +75,6 @@
 <script setup>
 import { ref, toRef, watch, onMounted, onUpdated } from "vue";
 
-import Tooltip from '../../../../components/tooltips/tooltip.vue';
-
 import localizationData from '../lang/pt-br.json';
 const localizationStrings = localizationData.localization;
 
