@@ -55,10 +55,7 @@
 </template>
 
 <script setup>
-import { XMarkIcon } from '@heroicons/vue/24/solid'
-
-import { ref, computed, watch } from 'vue'
-import { defineProps, defineEmits } from 'vue'
+import { ref, computed, defineProps, defineEmits } from 'vue'
 
 const props = defineProps({
 	units: {

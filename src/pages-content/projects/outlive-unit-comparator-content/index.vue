@@ -4,12 +4,9 @@
 		<div class="text-white flex justify-center p-3">
 			<div class="flex flex-col items-center justify-center text-center p-4">
 				<h1 class="text-4xl font-bold mb-2">🚧 Work in Progress</h1>
-				<p class="text-lg mb-2">
+				<p >
 					This project page is still under construction. Current selectable units are placeholders
 				</p>
-				<div class="rounded-md font-medium">
-					<HyperLink :link="'/projects'" :label="'Go back to Projects'" :target="'_self'" />
-				</div>
 			</div>
 		</div>
 
@@ -56,6 +53,9 @@
 		<StatBar v-for="(statData, statName) in preparedStatBars" :key="statName" :stat-data="statData"
 			:stat-name="statName" />
 
+		<!-- Music player -->
+		<MusicPlayer />
+
 		<!-- To-Do List -->
 		<div class="text-white mt-6">
 			<DividerLabel label="TO-DO" class="text-white" />
@@ -63,7 +63,7 @@
 				<li>Add all units</li>
 				<li>Add all buildings</li>
 				<li><s>Fix mobile responsibility</s></li>
-				<li>Music player</li>
+				<li><s>Music player</s></li>
 				<li>Better unit selection (filters, tags, modal)</li>
 				<li>Outlive interface</li>
 				<li>Transition indicator when select research</li>
@@ -79,13 +79,13 @@ import { ref, watch } from 'vue';
 import StatBar from "./components/stat-bar.vue";
 import DividerLabel from '../../../components/dividers/divider-label.vue';
 import UnitSelect from './components/unit-select.vue';
+import MusicPlayer from './components/music-player.vue';
+import { getLocalizedString } from '../../../helpers/localization';
 
 // data
 import unitsData from './data/units.json';
 const units = unitsData.units;
-
-import localizationData from './lang/pt-br.json';
-const localizationStrings = localizationData.localization;
+// const researchs = unitsData.researches;
 
 const selectedUnitLeft = ref(null);
 const selectedUnitRight = ref(null);
@@ -152,7 +152,7 @@ function prepareStatBars() {
 		// Add base stat
 		currentStat.left_bars.push({
 			value: statValue,
-			description: localizationStrings[statName] || 'N/A'
+			description: getLocalizedString(`base_${statName}`)
 		});
 		currentStat.left_total += statValue;
 
@@ -190,7 +190,7 @@ function prepareStatBars() {
 		// Add base stat
 		currentStat.right_bars.push({
 			value: statValue,
-			description: localizationStrings[statName] || 'N/A'
+			description: getLocalizedString(`base_${statName}`)
 		});
 		currentStat.right_total += statValue;
 

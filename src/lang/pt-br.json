@@ -1,0 +1,15 @@
+{
+	"localization": {
+		"health": "Vida",
+		"base_health": "Vida base",
+		"armor": "Blindagem",
+		"base_armor": "Blindagem base",
+		"attack_damage": "Dano de ataque",
+		"base_attack_damage": "Dano de ataque base",
+		"music_player": {
+			"toggle_music": "Ativa ou desativa a reprodução automática de músicas, em sequência ou repetição.",
+			"toggle_sequence": "Ativa ou desativa a reprodução automática da próxima música na sequência que esteja ativa.",
+			"toggle_repeat": "Ativa ou desativa a repetição da playlist ao final, reiniciando a partir da primeira música ativa."
+		}
+	}
+}

@@ -10,7 +10,7 @@
 							'bg-red-600 border-red-800': !isLeftBetter,
 							'border-2 border-dashed': statData.left_bars.length > 1,
 						}" :style="{ width: getSegmentPercentage(leftBar.value, statData.left_total, leftBarPercentage) + '%' }"
-						:ref="setSegmentRef" :data-tippy-content="`${leftBar.description}: ${leftBar.value}`">
+						v-tippy="`${leftBar.description}: ${leftBar.value}`">
 						<b>{{ leftBar.value }}</b>
 					</div>
 				</div>
@@ -61,7 +61,7 @@
 							'bg-red-600 border-red-800': !isRightBetter,
 							'border-2 border-dashed': statData.right_bars.length > 1,
 						}" :style="{ width: getSegmentPercentage(rightBar.value, statData.right_total, rightBarPercentage) + '%' }"
-						:ref="setSegmentRef" :data-tippy-content="`${rightBar.description}: ${rightBar.value}`">
+						v-tippy="`${rightBar.description}: ${rightBar.value}`">
 						<b>{{ rightBar.value }}</b>
 					</div>
 				</div>
@@ -74,23 +74,11 @@
 
 <script setup>
 import { ref, toRef, watch, onMounted, onUpdated } from "vue";
+import { getLocalizedString } from "../../../../helpers/localization.js";
 
-import localizationData from '../lang/pt-br.json';
-const localizationStrings = localizationData.localization;
-
-// Tippy.js
-import tippy from 'tippy.js';
-import 'tippy.js/dist/tippy.css';
-
-const tippyInstances = [];
-
-// Custom ref function to collect all segment elements
-function setSegmentRef(el) {
-	if (el && !el._tippy) {
-		const instance = tippy(el);
-		tippyInstances.push(instance);
-	}
-}
+import { directive as tippy } from 'vue-tippy'
+// Register the directive
+const vTippy = tippy
 
 // Props
 const props = defineProps({
@@ -103,16 +91,12 @@ const statName = toRef(props, "statName");
 const statLabel = ref('');
 
 onMounted(() => {
-	statLabel.value = localizationStrings[statName.value] || 'N/A';
+	statLabel.value = getLocalizedString(statName.value);
 	calcBars();
 });
 
 watch([statData], () => {
 	calcBars();
-
-	// Clear tooltips
-	tippyInstances.forEach(instance => instance.destroy());
-	tippyInstances.length = 0;
 }, { deep: true });
 
 function calcBars() {

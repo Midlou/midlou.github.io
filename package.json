@@ -25,6 +25,7 @@
     "tippy.js": "^6.3.7",
     "tsparticles": "2.12",
     "tsparticles-engine": "^2.12.0",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "vue-tippy": "^6.7.1"
   }
 }
