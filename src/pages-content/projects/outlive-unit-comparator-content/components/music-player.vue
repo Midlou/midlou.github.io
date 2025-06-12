@@ -93,6 +93,8 @@ const tracks = ref([
 	{ name: 'Robô 1', src: '/assets/projects/outlive-unit-comparator/music/music05.wav', enabled: true },
 	{ name: 'Robô 2', src: '/assets/projects/outlive-unit-comparator/music/music06.wav', enabled: true },
 	{ name: 'Robô 3', src: '/assets/projects/outlive-unit-comparator/music/music07.wav', enabled: true },
+
+	{ name: 'Humano 2 demo', src: '/assets/projects/outlive-unit-comparator/music/music01_demo.wav', enabled: false },
 ]);
 
 const currentAudio = ref(null)
