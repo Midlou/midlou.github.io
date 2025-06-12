@@ -4,7 +4,7 @@
 		<div class="text-white flex justify-center p-3">
 			<div class="flex flex-col items-center justify-center text-center p-4">
 				<h1 class="text-4xl font-bold mb-2">🚧 Work in Progress</h1>
-				<p >
+				<p>
 					This project page is still under construction. Current selectable units are placeholders
 				</p>
 			</div>
@@ -58,15 +58,27 @@
 
 		<!-- To-Do List -->
 		<div class="text-white mt-6">
-			<DividerLabel label="TO-DO" class="text-white" />
+			<DividerLabel label="TO-DO" />
 			<ul class="list-disc list-inside">
 				<li>Add all units</li>
 				<li>Add all buildings</li>
-				<li><s>Fix mobile responsibility</s></li>
+				<li><s>Fix mobile responsibility</s> Need more fixing</li>
 				<li><s>Music player</s></li>
 				<li>Better unit selection (filters, tags, modal)</li>
 				<li>Outlive interface</li>
 				<li>Transition indicator when select research</li>
+				<li>Add more credits</li>
+			</ul>
+		</div>
+
+		<div class="text-white mt-6">
+			<DividerLabel label="Credits" />
+			<ul class="list-disc list-inside">
+				<li>
+					<a class="stylized-link" href="https://github.com/Edu371/Outlive" target="_blank" rel="noreferrer">
+						Outlive extraction scripts by Edu
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
