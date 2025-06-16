@@ -1,5 +1,5 @@
 <template>
-	<div class="text-white text-center p-5 bg-gradient-to-r from-slate-700 to-slate-900">
+	<div class="text-white text-center p-5 bg-slate-800">
 		<p class="mb-5">
 			Miceblocks Resource Pack and Miceblocks website by Midlou.
 		</p>
