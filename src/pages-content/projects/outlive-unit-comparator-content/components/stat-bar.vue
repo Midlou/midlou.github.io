@@ -1,7 +1,7 @@
 <template>
 	<div class="grid grid-cols-12 items-center text-white">
 		<!-- Left value -->
-		<div class="col-span-5 text-center py-3">
+		<div class="col-span-4 sm:col-span-5 text-center py-3">
 			<div class="flex items-center font-mono">
 				<div class="flex-1 h-4 bg-gray-700 rounded overflow-hidden">
 					<div v-for="(leftBar, index) in statData.left_bars" :key="index"
@@ -16,41 +16,41 @@
 				</div>
 
 				<span :key="statData.left_total + '_green'" v-if="isLeftBetter"
-					class="w-12 m-2 rounded bg-green-600 inline-block text-center">
+					class="w-12 m-1 md:m-2 rounded bg-green-600 inline-block text-center">
 					{{ statData.left_total }}
 				</span>
 				<span :key="statData.left_total + '_red'" v-else-if="statData.left_total !== 0"
-					class="w-12 m-2 rounded bg-red-600 inline-block text-center">
+					class="w-12 m-1 md:m-2 rounded bg-red-600 inline-block text-center">
 					{{ statData.left_total }}
 				</span>
 				<span :key="statData.left_total + '_gray'" v-else
-					class="w-12 m-2 rounded bg-gray-700 inline-block text-center">
+					class="w-12 m-1 md:m-2 rounded bg-gray-700 inline-block text-center">
 					{{ statData.left_total }}
 				</span>
 			</div>
 		</div>
 
 		<!-- Center label -->
-		<div class="col-span-2 text-center py-3">
-			<div class="bg-gray-800 rounded overflow-hidden m-2 p-2 font-mono">
+		<div class="col-span-4 sm:col-span-2 text-center py-3">
+			<div class="bg-gray-800 rounded overflow-hidden m-0 md:m-2 p-2 font-mono">
 				{{ statLabel }}
 			</div>
 		</div>
 
 		<!-- Right value -->
-		<div class="col-span-5 text-center py-3">
+		<div class="col-span-4 sm:col-span-5 text-center py-3">
 			<div class="flex items-center font-mono">
 				<!-- <transition name="bounce" mode="out-in"> -->
 				<span :key="statData.right_total + '_green'" v-if="isRightBetter"
-					class="w-12 m-2 rounded bg-green-600 inline-block text-center">
+					class="w-12 m-1 md:m-2 rounded bg-green-600 inline-block text-center">
 					{{ statData.right_total }}
 				</span>
 				<span :key="statData.right_total + '_red'" v-else-if="statData.right_total !== 0"
-					class="w-12 m-2 rounded bg-red-600 inline-block text-center">
+					class="w-12 m-1 md:m-2 rounded bg-red-600 inline-block text-center">
 					{{ statData.right_total }}
 				</span>
 				<span :key="statData.right_total + '_gray'" v-else
-					class="w-12 m-2 rounded bg-gray-700 inline-block text-center">
+					class="w-12 m-1 md:m-2 rounded bg-gray-700 inline-block text-center">
 					{{ statData.right_total }}
 				</span>
 
