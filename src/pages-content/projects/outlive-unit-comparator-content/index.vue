@@ -1,7 +1,7 @@
 <template>
 	<div class="container mx-auto p-2 md:max-w-5xl">
 		<!-- Work in Progress Header -->
-		<div class="text-white flex justify-center p-3">
+		<div class="text-white flex justify-center p-3 my-6">
 			<div class="flex flex-col items-center justify-center text-center p-4">
 				<h1 class="text-4xl font-bold mb-2">🚧 Work in Progress</h1>
 				<p>
@@ -11,7 +11,7 @@
 		</div>
 
 		<!-- Unit Selection (Responsive Grid) -->
-		<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 my-6">
 			<!-- Unit Left -->
 			<div>
 				<DividerLabel label="Unidade 1" class="text-white" />
@@ -50,14 +50,18 @@
 		</div>
 
 		<!-- Stats -->
-		<StatBar v-for="(statData, statName) in preparedStatBars" :key="statName" :stat-data="statData"
-			:stat-name="statName" />
+		<div class="my-6">
+			<StatBar v-for="(statData, statName) in preparedStatBars" :key="statName" :stat-data="statData"
+				:stat-name="statName" />
+		</div>
 
 		<!-- Music player -->
-		<MusicPlayer />
+		<div class="my-6">
+			<MusicPlayer />
+		</div>
 
 		<!-- To-Do List -->
-		<div class="text-white mt-6">
+		<div class="text-white my-6">
 			<DividerLabel label="TO-DO" />
 			<ul class="list-disc list-inside">
 				<li>Add all units</li>
@@ -71,7 +75,7 @@
 			</ul>
 		</div>
 
-		<div class="text-white mt-6">
+		<div class="text-white my-6">
 			<DividerLabel label="Credits" />
 			<ul class="list-disc list-inside">
 				<li>

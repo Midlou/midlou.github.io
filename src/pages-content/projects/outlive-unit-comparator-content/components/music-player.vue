@@ -9,17 +9,17 @@
 				<!-- <input type="checkbox" v-model="track.enabled" /> -->
 
 				<button @click="track.enabled = false" v-if="track.enabled" v-tippy="{ content: getLocalizedString('music_player.toggle_music'), delay: 100 }"
-					class="flex-1 sm:flex-none px-3 py-2 text-sm bg-blue-500 text-white hover:bg-blue-600">
+					class="basis-1/6 sm:basis-auto sm:flex-none px-3 py-2 text-sm flex justify-center bg-blue-500 text-white hover:bg-blue-600">
 					<CheckIcon class="h-4 w-4" />
 				</button>
 
 				<button @click="track.enabled = true" v-if="!track.enabled" v-tippy="{ content: getLocalizedString('music_player.toggle_music'), delay: 100 }"
-					class="flex-1 sm:flex-none px-3 py-2 text-sm bg-gray-500 text-white hover:bg-gray-600">
+					class="basis-1/6 sm:basis-auto sm:flex-none px-3 py-2 text-sm flex justify-center bg-gray-500 text-white hover:bg-gray-600">
 					<XMarkIcon class="h-4 w-4" />
 				</button>
 
 				<button @click="playTrack(index)"
-					class="flex-1 sm:flex-none px-3 py-2 text-sm bg-blue-500 text-white hover:bg-blue-600 border-l border-blue-700">
+					class="basis-5/6 sm:basis-auto sm:flex-none px-3 py-2 text-sm bg-blue-500 text-white hover:bg-blue-600 border-l border-blue-700">
 					{{ track.name }}
 				</button>
 			</div>
