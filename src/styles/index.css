@@ -9,3 +9,28 @@
 .default-focus-dark {
     @apply focus:outline-none focus:ring-2 focus:ring-gray-700;
 }
+
+
+/* Team Fortress web style */
+
+.tf-shine-border {
+    @apply border-t-2 border-l-2 border-t-tf-button-shine border-l-tf-button-shine border-b-2 border-r-2 border-b-tf-button-shadow border-r-tf-button-shadow;
+}
+
+.tf-background {
+    background:
+        /* linear-gradient(to top, #2E2A28, transparent 30%), */
+        /* linear-gradient(to bottom, #2E2A28, transparent 30%), */
+        linear-gradient(to left, #2E2A28, transparent 20%),
+        linear-gradient(to right, #2E2A28, transparent 20%),
+        #595553;
+}
+
+.tf-navbar-background {
+    background:
+        /* linear-gradient(to top, #2E2A28, transparent 30%), */
+        /* linear-gradient(to bottom, #2E2A28, transparent 30%), */
+        linear-gradient(to left, #000000, transparent 20%),
+        linear-gradient(to right, #000000, transparent 20%),
+        #3A342E;
+}
