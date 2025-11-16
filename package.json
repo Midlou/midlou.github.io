@@ -1,32 +1,21 @@
 {
-  "name": "",
+  "name": "midlou.github.io",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@astrojs/partytown": "^2.1.4",
-    "@astrojs/tailwind": "^6.0.2",
-    "@astrojs/vue": "^5.0.9",
-    "@heroicons/vue": "^2.2.0",
-    "@tresjs/cientos": "^4.3.0",
-    "@tresjs/core": "^4.3.3",
-    "astro": "^5.6.1",
-    "astro-particles": "^2.10.0",
-    "html2canvas": "^1.4.1",
-    "lodash": "^4.17.21",
-    "luxon": "^3.5.0",
-    "tailwindcss": "^3.4.1",
-    "three": "^0.175.0",
-    "tippy.js": "^6.3.7",
-    "tsparticles": "2.12",
-    "tsparticles-engine": "^2.12.0",
-    "vue": "^3.5.13",
-    "vue-tippy": "^6.7.1"
+    "@tailwindcss/vite": "^4.1.17",
+    "tailwindcss": "^4.1.17",
+    "vue": "^3.5.24",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.2.2"
   }
 }
