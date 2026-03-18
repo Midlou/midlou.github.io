@@ -1,6 +1,6 @@
 ---
 import BaseBody from "../../body/base-body.astro";
-import Particles from "astro-particles";
+// import Particles from "astro-particles";
 import type { ISourceOptions } from "tsparticles-engine";
 
 // components
@@ -75,11 +75,11 @@ const options: ISourceOptions = {
 <BaseBody title="Miceblocks">
     <MiceblocksLayout client:load>
         <div class="h-screen">
-            <Particles
+            <!-- <Particles
                 id="tsparticles"
                 options={options}
                 init="particlesInit"
-            />
+            /> -->
 
             <div class="grid container mx-auto py-3">
                 <div class="flex justify-center container mx-auto py-3">
