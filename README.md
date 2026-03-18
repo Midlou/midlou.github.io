@@ -1,13 +1,75 @@
-# My website!
+# Nuxt Minimal Starter
 
-## About this project
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-[midlou.github.io](https://midlou.github.io/)
-or
-[midlou.com](https://midlou.com)
+## Setup
 
-This project is my 3rd attempt at creating a website where I catalog and showcase my projects as a portfolio. Unfortunately, I suffer from a small problem known as 'lack of time', so you'll quickly notice that much of the website is incomplete or entirely non-functional. 
+Make sure to install dependencies:
 
-I swear I'm trying, but the forces of chaos are strong in this domain.
+```bash
+# npm
+npm install
 
-This iteration of the website uses [Astro](https://astro.build/), ~~[React](https://react.dev/),~~ [Vue](https://vuejs.org/), and [Tailwind](https://tailwindcss.com/). I hope this is the last time I choose to switch technologies (It wasn't). I also use some cool things like [tsparticles](https://particles.js.org/) and [Heroicons](https://heroicons.com/).
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
