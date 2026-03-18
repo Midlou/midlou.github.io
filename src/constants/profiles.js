@@ -20,6 +20,11 @@ export const PROFILE_ITEMS = [
 		"link": "https://steamcommunity.com/id/MidlouBR/myworkshopfiles/",
 	},
 	{
+		"value": "tf2maps",
+		"label": "TF2maps",
+		"link": "https://tf2maps.net/members/midlou.22389/",
+	},
+	{
 		"value": "planet_minecraft",
 		"label": "Planet Minecraft",
 		"link": "https://www.planetminecraft.com/member/midlou/"
@@ -43,5 +48,10 @@ export const PROFILE_ITEMS = [
 		"value": "s8box_profile",
 		"label": "S&box",
 		"link": "https://sbox.game/midlou"
+	},
+	{
+		"value": "thingiverse",
+		"label": "Thingiverse",
+		"link": "https://www.thingiverse.com/Midlou/designs"
 	}
 ];
